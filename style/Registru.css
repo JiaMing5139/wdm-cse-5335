@@ -1,0 +1,35 @@
+body{
+    text-align: center;
+}
+.content_container{
+margin: 100px;
+}
+.col1{
+    margin-top: 50px;
+    display: flex;
+    justify-content:center;
+}
+.col1 img{
+    width: 200px;
+    height: 200px;
+}
+
+.col2{
+    margin-left: 100px;
+}
+
+input{
+    width: 350px;
+    height: 30px;
+    margin: 20px;
+}
+
+
+button{
+
+    background-color:  #6059f6;
+    color: white;
+    padding:10px 30px  10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
