@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="style/global.css">
+    <cookie-value></cookie-value>
     <link rel="stylesheet" type="text/css" href="style/inicio_style.css">
-
+    <link rel="stylesheet" type="text/css" href="style/global.css">
 </head>
 <body>
-
+<?php
+ echo "131"
+ response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
+?>
 <div class="nav-container">
     <img src="static/logo.png">
-    <a href="inicio.html">inicio</a>
+    <a href="inicio.html" class="activeTag">inicio</a>
     <a href="semblanza.html">semblanza</a>
     <a href="centro augusto mijares.html">centro augusto mijares</a>
     <a href="proyectos.html">proyectos</a>
@@ -63,9 +66,10 @@
 <div class="videoDescription-container">
 
     <div class="center">
-        <video width="600" controls >
-            <source  src="https://youtu.be/Kcl-T98Wtvo" type="video/mp4">
-        </video>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0o9ULJAt7cA" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
             <div class = "descriptionVieo">
                     <h2>OBJETIVOS</h2>
                     <ol>
@@ -97,3 +101,4 @@
 </body>
 
 </html>
+

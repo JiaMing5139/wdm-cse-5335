@@ -50,16 +50,17 @@
 
 
 .videoDescription-container{
-    background-color:#ebf2ff ;
+    background-color:#F7F7FF ;
     text-align: center;
     margin-top: 5%;
 }
 
-.videoDescription-container video{
-    padding: 30px;
+.videoDescription-container iframe{
+    padding: 50px;
 }
 
 .videoDescription-container .descriptionVieo{
+    padding-top: 50px;
     padding-left: 40px;
     display: inline-block;
     vertical-align: top;
