@@ -1,0 +1,42 @@
+.Heading{
+    text-align: center;
+    margin-top: 3%;
+}
+
+#row1{
+    text-align: center;
+}
+#row1 img{
+    display: inline-block;
+    /* height: 500px; */
+    padding-right: 100px;
+}
+#row1 div{
+    display: inline-block;
+    text-align: left;
+    padding-left: 100px;
+}
+
+#row2{
+    text-align: center;
+    padding-top:100px;
+    padding-bottom:100px;
+}
+#row2 img{
+    height: 500px;
+    padding-left: 100px;
+}
+#row2 div{
+    display: inline-block;
+    text-align: left;
+    padding-right: 100px;
+}
+
+.button1 {
+    background-color: rgb(84, 97, 219);
+    text-align: center;
+    font-size: 12px;
+    height:30px;
+    border-radius: 12px;
+    color: white;
+}
