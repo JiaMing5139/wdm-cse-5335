@@ -1,0 +1,57 @@
+.row1-container{
+    text-align: center;
+}
+
+.row1-container .mision-container{
+    display: inline-block;
+    text-align: center;
+}
+
+.row1-container .vision-container{
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 15px;
+}
+
+.row2-container{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.row2-container img{
+    width: 50px;
+    height: 50px;
+}
+
+.row2-container p {
+
+    margin:0 auto;
+
+}
+
+.row3-container{
+    margin-top: 100px;
+}
+.Row-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    text-align: center;
+}
+.smallblock p{
+    width: 35ch;
+    padding: 0;
+
+}
+
+.smallblock{
+    padding: 30px;
+    height: fit-content;
+    background-color:#F7F7FF;
+    margin-left: 30px;
+    min-height: 0px;
+}
+
+
+

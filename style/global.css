@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
 .nav-container {
     text-align: center;
     /*background: #ebf2ff;*/
@@ -13,6 +16,16 @@
     margin: 5px;
     text-align: center;
     font: bold 20px Sans-Serif;
+}
+
+.nav-container a:link {
+    color: #000000;
+}
+.nav-container a:visited {
+    color: inherit;
+}
+.nav-container a.activeTag{
+    color: #454cde;
 }
 footer .container{
     position: relative;
@@ -55,6 +68,7 @@ p{
     font-weight: 400;
     line-height: 1.667;
     width: 70ch;
+    color: #888888;
 }
 ol{
     font-family: Roboto, serif;
@@ -62,6 +76,12 @@ ol{
     font-weight: 400;
     line-height: 1.667;
     width: 70ch;
+    color: #888888;
+
+}
+
+h1{
+    color: #6059f6;
 }
 
 .bigger-line-height{
@@ -72,3 +92,4 @@ body{
     width: 100%;
     height: 100%;
 }
+
