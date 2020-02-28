@@ -1,32 +1,31 @@
-body{
+.Registru body{
     text-align: center;
 }
-.content_container{
+.Registru  .content_container{
 margin: 100px;
 }
-.col1{
+.Registru .col1{
     margin-top: 50px;
     display: flex;
     justify-content:center;
 }
-.col1 img{
+.Registru .col1 img{
     width: 200px;
     height: 200px;
 }
 
-.col2{
+.Registru  .col2{
     margin-left: 100px;
 }
 
-input{
+.Registru input{
     width: 350px;
     height: 30px;
     margin: 20px;
 }
 
 
-button{
-
+.Registru button{
     background-color:  #6059f6;
     color: white;
     padding:10px 30px  10px;

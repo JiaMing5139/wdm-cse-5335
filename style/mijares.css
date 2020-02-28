@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
+
 
 
 .nav-container {
     text-align: center;
+    background-color: #2f3742;
     /*background: #ebf2ff;*/
 }
 
@@ -82,6 +85,18 @@ ol{
 
 h1{
     color: #6059f6;
+    font-family: Rajdhani, serif;
+}
+
+h2{
+    font-family: Rajdhani, serif;
+}
+h3{
+
+    font-family: Rajdhani, serif;
+}
+h4{
+    font-family: Rajdhani, serif;
 }
 
 .bigger-line-height{
@@ -411,6 +426,99 @@ body{
 
 .equipo #row2 #img{
     text-align: center;
+}
+
+.Registru body{
+    text-align: center;
+}
+.Registru  .content_container{
+    margin: 100px;
+    text-align: center;
+}
+.Registru .col1{
+    margin-top: 50px;
+    display: flex;
+    justify-content:center;
+}
+.Registru .col1 img{
+    width: 200px;
+    height: 200px;
+}
+
+.Registru  .col2{
+    margin-left: 100px;
+}
+
+.Registru input{
+    width: 350px;
+    height: 30px;
+    margin: 20px;
+}
+
+
+.Registru button{
+
+    background-color:  #6059f6;
+    color: white;
+    padding:10px 30px  10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+
+.InieteDeSesiem input{
+    width: 200px;
+    height: 30px;
+    margin: 15px;
+}
+
+.InieteDeSesiem button{
+
+    background-color:  #6059f6;
+    color: white;
+    padding:10px 30px  10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.InieteDeSesiem .content_container{
+    margin-top: 100px;
+    text-align: center;
+}
+
+
+.video .title img{
+    width: 50px;
+    height: 50px;
+}
+
+.video .title{
+    text-align: center;
+    margin: 100px;
+}
+
+.video .flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+
+    text-align: center;
+}
+.video .card{
+    height: fit-content;
+    width: 450px;
+    margin: 20px;
+    background-color:#F7F7FF;
+    text-align: center;
+}
+
+.video .card p{
+    margin: 0 auto;
+    width: 30ch;
+}
+
+.video iframe{
+    width: 450px;
 }
 
 

@@ -1,21 +1,21 @@
-img{
+.video  img{
     width: 50px;
     height: 50px;
 }
 
-.title{
+.video .title{
     text-align: center;
     margin: 100px;
 }
 
-.flex{
+.video .flex{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
 
     text-align: center;
 }
-.card{
+.video .card{
     height: fit-content;
     width: 450px;
     margin: 20px;
@@ -23,11 +23,11 @@ img{
     text-align: center;
 }
 
-.card p{
+.video .card p{
     margin: 0 auto;
     width: 30ch;
 }
 
-iframe{
+.video iframe{
     width: 450px;
 }
