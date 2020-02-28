@@ -430,7 +430,63 @@ body{
 }
 
 
+.iniete{
+    text-align: center;
+
+}
+
+.iniete input{
+    width: 200px;
+    height: 30px;
+    margin: 15px;
+}
+
+.iniete button{
+
+    background-color:  #6059f6;
+    color: white;
+   padding:10px 30px  10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.iniete .content_container{
+    margin-top: 100px;
+}
 
 
+.registru{
+    text-align: center;
+}
+.registru .content_container{
+margin: 100px;
+}
+.registru .col1{
+    margin-top: 50px;
+    display: flex;
+    justify-content:center;
+}
+.registru .col1 img{
+    width: 200px;
+    height: 200px;
+}
+
+.registru .col2{
+    margin-left: 100px;
+}
+
+.registru input{
+    width: 350px;
+    height: 30px;
+    margin: 20px;
+}
 
 
+.registru button{
+
+    background-color:  #6059f6;
+    color: white;
+    padding:10px 30px  10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
