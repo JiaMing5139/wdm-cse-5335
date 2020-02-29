@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rajdhan:900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhan&display=swap');
 
 /*define style of font and h1 h2 h3 h4*/
 #wrapper{
@@ -97,13 +97,15 @@ footer .container #bootom-container{
 
 footer .container  #bootom-container  hr{
     border-color: #888888;
-    margin-left: 20%;
+    margin-left: 13%;
     margin-bottom: 30px;
 }
 
 footer .container  #bootom-container  #name{
     color: #454cde;
+
 }
+
 
 footer .container #bootom-container #iconGroup{
     display: inline-block;
@@ -380,6 +382,9 @@ body{
     padding-left: 100px;
 }
 
+.equipo{
+    margin: 0 auto;
+}
 .equipo #a{
     text-align: center;
 }
@@ -389,7 +394,7 @@ body{
 }
 
 .equipo #row1{
-    margin-left: 22%;
+    margin-left:15%;
     padding-bottom: 100px;
 }
 
@@ -419,7 +424,7 @@ body{
 }
 
 .equipo #row2{
-    margin-left: 22%;
+    margin-left:15%;
     padding-bottom: 100px;
 }
 
@@ -502,7 +507,7 @@ body{
     text-align: center;
 }
 
-.InieteDeSesiem button{
+.InieteDeSesiem .submitbutton{
     border-radius: 5px;
     background-color:  #6059f6;
     color: white;

@@ -1,4 +1,5 @@
 function validate(){
+    console.log("vaildate")
 var username = document.getElementById("user").value;
 var password = document.getElementById("password").value;
 if ( username == "abcd" && password == "abcd"){

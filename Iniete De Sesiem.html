@@ -7,17 +7,17 @@
     <script src="login.js"></script>
 </head>
 <body>
-<div class="InieteDeSesiem">
+<div id="wrapper" class="InieteDeSesiem">
     <div class="nav-container">
         <img src="static/logo.png">
-        <a href="inicio.html" class="activeTag">inicio</a>
+        <a href="inicio.html" >inicio</a>
         <a href="semblanza.html">semblanza</a>
         <a href="centro augusto mijares.html">centro augusto mijares</a>
         <a href="proyectos.html">proyectos</a>
         <a href="eventos.html">eventos</a>
         <a href="videos.html">videos</a>
         <a href="equipo.html">equipo</a>
-        <a href="Iniete De Sesiem.html">Iniete De Sesiem</a>
+        <a href="Iniete De Sesiem.html" class="activeTag">Iniete De Sesiem</a>
         <a href="Registru.html">Registru</a>
     </div >
     <form action="" method="post">
@@ -26,10 +26,10 @@
     <h2>CENTRO AUGUSTO MIJARES </h2>
     <h3>Iniciar Sesion</S></h3>
     <div>
-        <input placeholder="Nombre de Usuario o Correo">
-        <input placeholder="Contrasena">
+        <input type="text" id="user" placeholder="Nombre de Usuario o Correo">
+        <input type="password" id="password"  placeholder="Contrasena">
         <div>
-            <input type="button" value="ENTRAR" id="submit" onclick="validate()"/>
+            <button class="submitbutton" type="button" value="ENTRAR" id="submit" onclick="validate()">ENTRAR</button>
         </div>
     </div>
 </div>
