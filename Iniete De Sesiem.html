@@ -5,6 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="style/mijares.css">
     <!-- <link rel="stylesheet" type="text/css" href="style/global.css"> -->
+    <script src="login.js"></script>
 </head>
 <body>
 <div class="iniete">
@@ -17,24 +18,23 @@
     <a href="eventos.html">eventos</a>
     <a href="videos.html">videos</a>
     <a href="equipo.html">equipo</a>
-    <a href="Iniete De Sesiem.html" class="activeTag">Iniete De Sesiem</a>
+    <a href="Iniete De Sesiem.html" >Iniete De Sesiem</a>
     <a href="Registru.html">Registru</a>
 </div >
+<form action="" method="post">
 <div class="content_container">
     <img src="static/logo.png">
     <h2>CENTRO AUGUSTO MIJARES </h2>
     <h3>Iniciar Sesion</S></h3>
     <div>
-        <input placeholder="Nombre de Usuario o Correo">
-        <input placeholder="Contrasena">
+        <input type="text" id="user" placeholder="Nombre de Usuario o Correo">
+        <input type="password" id="password" placeholder="Contrasena">
         <div>
-            <a href="login.html">
-             <button>ENTRAR</button>
-            </a>
+            <input type="button" value="ENTRAR" id="submit" onclick="validate()"/>
         </div>
     </div>
 </div>
-
+</form>
 <footer>
     <div class="container">
         <div id="bootom-container" >
