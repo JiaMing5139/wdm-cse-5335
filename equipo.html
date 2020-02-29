@@ -8,7 +8,12 @@
 
 </head>
 <body>
-<div class="equipo">
+    <script>
+        if(sessionStorage.getItem('username')==null){
+            window.location.href="Iniete De Sesiem.html";
+        }
+    </script>
+<div id="wrapper" class="equipo">
 <div class="nav-container">
     <img src="static/logo.png">
     <a href="inicio.html">inicio</a>
@@ -17,7 +22,7 @@
     <a href="proyectos.html">proyectos</a>
     <a href="eventos.html">eventos</a>
     <a href="videos.html">videos</a>
-    <a href="equipo.html">equipo</a>
+    <a href="equipo.html " class="activeTag">equipo</a>
     <a href="Iniete De Sesiem.html">Iniete De Sesiem</a>
     <a href="Registru.html">Registru</a>
 </div >

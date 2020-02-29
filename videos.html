@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="style/videos.css">
 </head>
 <body>
+    <script>
+        if(sessionStorage.getItem('username')==null){
+            window.location.href="Iniete De Sesiem.html";
+        }
+    </script>   
 <div class="nav-container">
     <img src="static/logo.png">
     <a href="inicio.html" class="activeTag">inicio</a>
@@ -14,7 +19,7 @@
     <a href="centro augusto mijares.html">centro augusto mijares</a>
     <a href="proyectos.html">proyectos</a>
     <a href="eventos.html">eventos</a>
-    <a href="videos.html">videos</a>
+    <a href="videos.html" class="activeTag">videos</a>
     <a href="equipo.html">equipo</a>
     <a href="Iniete De Sesiem.html">Iniete De Sesiem</a>
     <a href="Registru.html">Registru</a>
