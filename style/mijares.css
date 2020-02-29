@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Rajdhan:900i&display=swap');
 
 /*define style of font and h1 h2 h3 h4*/
+#wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+
 p{
     font-family: Roboto, serif;
     font-size: 15px;
@@ -117,65 +122,6 @@ body{
 }
 
 
-.mijares .row1-container{
-    text-align: center;
-}
-
-.mijares .row1-container .mision-container{
-    display: inline-block;
-    text-align: center;
-}
-
-.mijares .row1-container .vision-container{
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    padding-top: 15px;
-}
-
-.mijares .row2-container{
-    padding-top: 100px;
-    text-align: center;
-}
-
-.mijares .row2-container img{
-    width: 50px;
-    height: 50px;
-}
-
-.mijares .row2-container p {
-
-    margin:0 auto;
-
-}
-
-.mijares .row3-container{
-    margin-top: 100px;
-}
-
-.mijares .Row-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    text-align: center;
-}
-.mijares .smallblock p{
-    width: 35ch;
-    padding: 0;
-
-}
-
-.mijares .smallblock{
-    padding: 30px;
-    height: fit-content;
-    background-color:#F7F7FF;
-    margin-left: 30px;
-    min-height: 0px;
-}
-
-
-
-
 .inicio .titleLogo {
     vertical-align: bottom;
     display: inline-block;
@@ -198,6 +144,7 @@ body{
 }
 .inicio .description p{
     font-family: Roboto, serif;
+    color: #777777;
     font-size: 15px;
     font-weight: 400;
     line-height: 1.667;
@@ -303,6 +250,68 @@ body{
     margin: 30px 0;
 }
 
+
+
+.mijares .row1-container{
+    text-align: center;
+}
+
+.mijares .row1-container .mision-container{
+    display: inline-block;
+    text-align: center;
+}
+
+.mijares .row1-container .vision-container{
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 15px;
+}
+
+.mijares .row2-container{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.mijares .row2-container img{
+    width: 50px;
+    height: 50px;
+}
+
+.mijares .row2-container p {
+
+    margin:0 auto;
+
+}
+
+.mijares .row3-container{
+    margin-top: 100px;
+}
+
+.mijares .Row-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    text-align: center;
+}
+.mijares .smallblock p{
+    width: 35ch;
+    padding: 0;
+
+}
+
+.mijares .smallblock{
+    padding: 30px;
+    height: fit-content;
+    background-color:#F7F7FF;
+    margin-left: 30px;
+    min-height: 0px;
+}
+
+
+
+
+
 .proyectos .Heading{
     text-align: center;
     margin-top: 3%;
@@ -349,12 +358,12 @@ body{
 
 .eventos .titleLogo h1{
     color: #01010a;
-    margin-left: 18%; 
+    margin-left: 6%;
 }
 
 .eventos #row{
-    /* text-align: center; */
-    margin-left: 13%;
+    text-align: left;
+    margin-left: 0%;
     
     padding-bottom:100px;
 }
@@ -543,7 +552,63 @@ body{
 }
 
 
+.iniete{
+    text-align: center;
+
+}
+
+.iniete input{
+    width: 200px;
+    height: 30px;
+    margin: 15px;
+}
+
+.iniete button{
+
+    background-color:  #6059f6;
+    color: white;
+   padding:10px 30px  10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.iniete .content_container{
+    margin-top: 100px;
+}
 
 
+.registru{
+    text-align: center;
+}
+.registru .content_container{
+margin: 100px;
+}
+.registru .col1{
+    margin-top: 50px;
+    display: flex;
+    justify-content:center;
+}
+.registru .col1 img{
+    width: 200px;
+    height: 200px;
+}
+
+.registru .col2{
+    margin-left: 100px;
+}
+
+.registru input{
+    width: 350px;
+    height: 30px;
+    margin: 20px;
+}
 
 
+.registru button{
+
+    background-color:  #6059f6;
+    color: white;
+    padding:10px 30px  10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}

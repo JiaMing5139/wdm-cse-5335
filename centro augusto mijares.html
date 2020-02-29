@@ -6,7 +6,12 @@
     <link rel="stylesheet" type="text/css" href="style/mijares.css">
 </head>
 <body>
-<div class="mijares">    
+    <script>
+        if(sessionStorage.getItem('username')==null){
+            window.location.href="Iniete De Sesiem.html";
+        }
+    </script>
+<div id="wrapper" class="mijares">    
     <div class="nav-container">
         <img src="static/logo.png">
         <a href="inicio.html">inicio</a>
