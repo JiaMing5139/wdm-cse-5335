@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhan:900i&display=swap');
 
 /*define style of font and h1 h2 h3 h4*/
 p{
@@ -23,17 +23,21 @@ ol{
 h1{
     color: #6059f6;
     font-family: Rajdhani, serif;
+    font-weight: bold;
 }
 
 h2{
     font-family: Rajdhani, serif;
+    font-weight: 900;
 }
 h3{
 
     font-family: Rajdhani, serif;
+    font-weight: 900;
 }
 h4{
     font-family: Rajdhani, serif;
+    font-weight: 900;
 }
 
 /*define style of Navigation bar*/
@@ -52,7 +56,8 @@ h4{
     display: inline-block;
     margin: 5px;
     text-align: center;
-    font: bold 20px Sans-Serif;
+    font-weight: bold  ;
+    padding: 20px;
 }
 
 .nav-container a:link {
@@ -87,7 +92,7 @@ footer .container #bootom-container{
 
 footer .container  #bootom-container  hr{
     border-color: #888888;
-    margin-left: 25%;
+    margin-left: 20%;
     margin-bottom: 30px;
 }
 
@@ -247,8 +252,10 @@ body{
     width: 70ch;
 }
 
+
 .semblanza #row1{
     text-align: center;
+    margin-top: 30px;
 }
 .semblanza #row1 img{
     height: 500px;
@@ -331,6 +338,7 @@ body{
 }
 
 .proyectos .button1 {
+    /*background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 51%, #3fcaff)*/
     background-color: rgb(84, 97, 219);
     text-align: center;
     font-size: 12px;
@@ -456,6 +464,8 @@ body{
     width: 350px;
     height: 30px;
     margin: 20px;
+    border: 1px solid #c6cdf6;
+    border-radius: 5px;
 }
 
 
@@ -466,6 +476,8 @@ body{
     padding:10px 30px  10px;
     margin-top: 30px;
     margin-bottom: 100px;
+    border-radius: 5px;
+
 }
 
 
@@ -473,10 +485,16 @@ body{
     width: 200px;
     height: 30px;
     margin: 15px;
+    border: 1px solid #c6cdf6;
+    border-radius: 5px;
+
+}
+.InieteDeSesiem body{
+    text-align: center;
 }
 
 .InieteDeSesiem button{
-
+    border-radius: 5px;
     background-color:  #6059f6;
     color: white;
     padding:10px 30px  10px;
