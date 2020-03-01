@@ -36,14 +36,14 @@ function projectClick() {
         "                <td><button>edit</button></td>\n" +
         "            </tr>\n"+
         "            <tr>\n" +
-        "                <td>3</td>\n" +
+        "                <td>4</td>\n" +
         "                <td>Project4</td>\n" +
         "                <td>Austria</td>\n" +
         "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
         "                <td><button>edit</button></td>\n" +
         "            </tr>\n"+
         "            <tr>\n" +
-        "                <td>4</td>\n" +
+        "                <td>5</td>\n" +
         "                <td>Project5</td>\n" +
         "                <td>Austria</td>\n" +
         "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
@@ -100,14 +100,14 @@ function eventClick() {
         "                <td><button>edit</button></td>\n" +
         "            </tr>\n"+
     "            <tr>\n" +
-    "                <td>4</td>\n" +
+    "                <td>5</td>\n" +
     "                <td>Event6</td>\n" +
     "                <td>Monday</td>\n" +
     "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
     "                <td><button>edit</button></td>\n" +
     "            </tr>\n"+
     "            <tr>\n" +
-    "                <td>4</td>\n" +
+    "                <td>6</td>\n" +
     "                <td>Event7</td>\n" +
     "                <td>Monday</td>\n" +
     "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
