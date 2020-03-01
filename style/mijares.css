@@ -683,8 +683,8 @@ body{
 }
 
 .vertical-menu a.active {
-    background-color: white; /* Add a green color to the "active/current" link */
-    color: black;
+    background-color: #6059f6; /* Add a green color to the "active/current" link */
+    color: white;
 }
 
 @media screen and (max-height: 450px) {
@@ -719,13 +719,16 @@ body{
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 80%;
-    margin-bottom: 100px;
+
 
 }
 
 .User table button{
     background-color:  #6059f6;
     color: white;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
 
 }
 
@@ -734,6 +737,7 @@ body{
     text-align: left;
     padding: 8px;
     margin:30px;
+    border-radius: 5px;
 }
 
 .User table tr:nth-child(even) {
@@ -742,4 +746,15 @@ body{
 
 .User {
         height: 100%;
+}
+
+.User #iddButton{
+    background-color:  #6059f6;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 100px;
+    margin-left: 600px;
+    margin-top: 30px;
 }

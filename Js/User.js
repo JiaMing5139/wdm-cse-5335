@@ -1,9 +1,10 @@
 function signout() {
     sessionStorage.removeItem("username")
-    window.location.replace("inicio.html")
+    window.location.replace("index.html")
 }
 
 function projectClick() {
+    setActive('project')
    const table =  this.document.getElementById("displayTag");
    const Name =  this.document.getElementById("clickedName");
    Name.innerText = 'Project'
@@ -53,7 +54,7 @@ function projectClick() {
 }
 
 function eventClick() {
-
+    setActive('event')
     const table =  this.document.getElementById("displayTag");
     const Name =  this.document.getElementById("clickedName");
     Name.innerText = 'Event'
@@ -117,6 +118,7 @@ function eventClick() {
 }
 
 function contactClick() {
+    setActive('contact')
     const table =  this.document.getElementById("displayTag");
     const Name =  this.document.getElementById("clickedName");
     Name.innerText = 'Contact'
@@ -148,6 +150,17 @@ function contactClick() {
 
 function refresUserName() {
    const name =  sessionStorage.getItem("username")
-    nameString = name?"User:" +  name:"User:" + "Null"
+    nameString = name?  name:  "Null";
     this.document.getElementById('username').innerText = nameString
+}
+
+function setActive(tag) {
+    const a = this.document.getElementById(tag);
+    const vmenue = this.document.getElementsByClassName('vertical-menu')
+    const clear_as = vmenue[0].getElementsByTagName("a");
+    for(let clear_a of clear_as){
+        clear_a.removeAttribute("class")
+    }
+    a.setAttribute("class","active");
+
 }
