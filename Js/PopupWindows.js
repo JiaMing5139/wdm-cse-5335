@@ -1,22 +1,40 @@
-if(sessionStorage.getItem('username')==null){
-    console.log("openLoginPopupWindow")
-    openLoginPopupWindow();
+
+
+function validate(){
+    console.log("vaildate")
+    var username = document.getElementById("user").value;
+    var password = document.getElementById("password").value;
+    window.location.replace("User.html")
+// if ( username == "abcd" && password == "abcd"){
+    sessionStorage.setItem("username",username);
+
 }
 
-
-
-
-
+function closePopupWindow() {
+    const Popupwindow = this.document.getElementById("LoginWindow");
+    let removeTarget = this.document.getElementById("popupWindow");
+    let target;
+    if (Popupwindow.contains(removeTarget)) {
+        target = Popupwindow;
+        removeTarget = this.document.getElementById("popupWindow");
+    }else {
+        target = this.document.getElementById("RegisterWindow");
+        removeTarget = this.document.getElementById("BigPopupWindow");
+    }
+    if(target && removeTarget)
+    target.removeChild(removeTarget)
+}
 
 function openLoginPopupWindow() {
-    const Popupwindow = this.document.getElementById("PopUp");
+     closePopupWindow() ; // only have on window at same time
+    const Popupwindow = this.document.getElementById("LoginWindow");
     const  divPop = this.document.createElement("div");
     divPop.className = "InieteDeSesiem"
     divPop.id = "popupWindow"
-    divPop.innerHTML ="    <img id = 'close' onclick='closePopupWindow()' src='static/close.png'> </img>\n" +
+    divPop.innerHTML =" <img id = 'close' onclick='closePopupWindow()' src='image/close.png'> </img>\n" +
         "    <form action=\"\" method=\"post\">\n" +
         "<div class=\"content_container\">\n" +
-        "    <img src=\"static/logo.png\">\n" +
+        "    <img src='image/logo.png'>\n" +
         "    <h2>CENTRO AUGUSTO MIJARES </h2>\n" +
         "    <h3>Iniciar Sesion</S></h3>\n" +
         "    <div>\n" +
@@ -32,9 +50,43 @@ function openLoginPopupWindow() {
 
 }
 
-function closePopupWindow() {
-    const Popupwindow = this.document.getElementById("PopUp");
-    const removeTarget = this.document.getElementById("popupWindow");
-    Popupwindow.removeChild(removeTarget)
+function openRegisterWindow(){
+    closePopupWindow() ;
+    const Popupwindow = this.document.getElementById("RegisterWindow");
+    const  divPop = this.document.createElement("div");
+    divPop.className = "Registru"
+    divPop.id = "BigPopupWindow"
+    divPop.innerHTML = "  <img id = 'close' onclick='closePopupWindow()' src='image/close.png'> </img>\n" +
+        "<div class=\"content_container\">\n" +
+        "<img src=\"image/logo.png\">\n" +
+        "<h4>Registro</h4>\n" +
+        "\n" +
+        "    <div class=\"col1\">\n" +
+        "        <div>\n" +
+        "            <div>\n" +
+        "            <input placeholder=\"Nombre\"> <input placeholder=\"Correo\">\n" +
+        "            </div>\n" +
+        "            <div>\n" +
+        "                <input placeholder=\"Contrasena\"> <input placeholder=\"Repter Contrasena\">\n" +
+        "            </div>\n" +
+        "            <div>\n" +
+        "                <input style=\"width: 750px\" placeholder=\"Direccion\">\n" +
+        "            </div>\n" +
+        "            <div style=\"display: flex\">\n" +
+        "                <button style=\"margin-left: 20px\">Guardar</button>\n" +
+        "            </div>\n" +
+        "        </div>\n" +
+        "        <div class=\"col2\">\n" +
+        "            <img src=\"image/logo.png\">\n" +
+        "            <h2>CENTRO AUGUSTO MIJARES</h2>\n" +
+        "        </div>\n" +
+        "\n" +
+        "    </div>\n" +
+        "</div>"
+
+    Popupwindow.appendChild(divPop);
+
 }
+
+
 

@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="style/mijares.css">
+    <script type="text/javascript" src="Js/PopupWindows.js"></script>
 </head>
 <body>
 <script>
 // if(sessionStorage.getItem('username')==null){
-//     window.location.href="Iniete De Sesiem.html";
+
 // }
 
 </script>
-<div id="wrapper" class="semblanza">
+
 <div class="nav-container">
-    <img src="static/logo.png">
+    <img src="image/logo.png">
     <a href="inicio.html" >inicio</a>
     <a href="semblanza.html" class="activeTag">semblanza</a>
     <a href="centro augusto mijares.html">centro augusto mijares</a>
@@ -22,10 +23,11 @@
     <a href="eventos.html">eventos</a>
     <a href="videos.html">videos</a>
     <a href="equipo.html">equipo</a>
-    <a href="Iniete De Sesiem.html">Iniete De Sesiem</a>
-    <a href="Registru.html">Registru</a>
+    <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
+    <a onclick="openRegisterWindow()">Registru</a>
+    <a href="User.html" id="userTag" style="display: none">User</a>
 </div >
-
+<div id="wrapper" class="semblanza">
 <div id="row1">
     <p><b>Augusto Mijares</b> nació en Villa de Cura (estado Anzoátegui) el 12 de
         noviembre de 1987, pero desde muy joven se residenció en la ciudad
@@ -44,7 +46,7 @@
         por un aprendizaje que contribuya a potenciar las capacidades del estudiante y el docente, en plena sintonía
         con las necesidades y características socio-culturales de la sociedad donde tiene lugar el hecho esducativo.
     </p>
-    <img src="static/Augusto_Mijares.jpg" alt="">
+    <img src="image/Augusto_Mijares.jpg" alt="">
 </div>
 
 <div id="row2">
@@ -89,18 +91,24 @@
     </div>
 
 </div>
-
+</div>
 <footer>
     <div class="container">
         <div id="bootom-container" >
             <hr>
-            <text>Copyright @2020 all rights reserved | This template is made with <text id="name">❤</text> by <text id="name">Jimmy and Ashu</text></text>
+            <text>Copyright @2020 all rights reserved | This template is made with <text id="name">❤</text> by <text id="name">Jimmy and ashu</text></text>
             <div id="iconGroup" style="float: right">
-                <img src="static/4icon.png" alt="">
+                <img src="image/facebook.png" class="facebook" alt="">
+                <img src="image/twitter.png" class="twitter" alt="">
+                <img src="image/basketball.png" alt="">
+                <img src="image/Be.png" alt="">
             </div>
         </div>
     </div>
 </footer>
-</div>
+
+<div id="LoginWindow"></div>
+<div id="RegisterWindow"></div>
 </body>
 </html>
+<script type="text/javascript" src="Js/afterOnload.js"></script>
