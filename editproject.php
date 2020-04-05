@@ -1,0 +1,36 @@
+<html>
+<body>
+<?php 
+include 'dbConn.php';
+$target_dir="proyect_1/";
+$target_file=$target_dir.basename($_FILES["imgfile"]["name"]);
+echo $target_file;
+    //echo $target_file;
+    //$filename=basename($_FILES["imgfile"]["name"]); 
+    $sql="Select imgUrl from project where ProjectID=".$_POST['id'];
+    $result=$conn->query($sql);
+    while($row = $result->fetch_assoc()) { 
+            if ($target_file=='proyect_1/'){
+
+                $sql=$conn->prepare("Update project SET ProjectName=?,ProjectDescription=?,imgUrl=? ,Date=? where ProjectID=?");
+                $sql->bind_param('ssssi',$_POST["projectname"],$_POST["projdesc"],$row["imgUrl"],$_POST["date"],$_POST["id"]);
+                $sql->execute();
+                $sql->close();
+                header("location:project.php");
+            }
+            else{
+                if(move_uploaded_file($_FILES["imgfile"]["tmp_name"], $target_file))
+                {
+                    $sql=$conn->prepare("Update project SET ProjectName=?,ProjectDescription=?,imgUrl=? ,Date=? where ProjectID=?");
+                    $sql->bind_param('ssssi',$_POST["projectname"],$_POST["projdesc"],$target_file,$_POST["date"],$_POST["id"]);
+                    $sql->execute();
+                    $sql->close();
+                    header("location:project.php");
+                }
+            }    
+    }
+
+
+?>
+</body>
+</html>

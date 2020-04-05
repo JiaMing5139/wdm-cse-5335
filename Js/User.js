@@ -1,55 +1,47 @@
-function signout() {
-    sessionStorage.removeItem("username")
-    window.location.replace("index.html")
-}
 
 function projectClick() {
     setActive('project')
-   const table =  this.document.getElementById("displayTag");
+   const div =  this.document.getElementById("displayTag");
    const Name =  this.document.getElementById("clickedName");
    Name.innerText = 'Project'
-    table.innerHTML = "    <tr>\n" +
-        "                <th>Project ID</th>\n" +
-        "                <th>Title</th>\n" +
-        "                <th>Leader</th>\n" +
-        "                <th>Description</th>\n" +
-        "                <th>Edit</th>\n" +
-        "            </tr>\n" +
-        "            <tr>\n" +
-        "                <td>1</td>\n" +
-        "                <td>Project1</td>\n" +
-        "                <td>Germany</td>\n" +
-        "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
-        "                <td><button>edit</button></td>\n" +
-        "            </tr>\n" +
-        "            <tr>\n" +
-        "                <td>2</td>\n" +
-        "                <td>Project2</td>\n" +
-        "                <td>Mexico</td>\n" +
-        "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
-        "                <td><button>edit</button></td>\n" +
-        "            </tr>\n" +
-        "            <tr>\n" +
-        "                <td>3</td>\n" +
-        "                <td>Project3</td>\n" +
-        "                <td>Austria</td>\n" +
-        "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
-        "                <td><button>edit</button></td>\n" +
-        "            </tr>\n"+
-        "            <tr>\n" +
-        "                <td>4</td>\n" +
-        "                <td>Project4</td>\n" +
-        "                <td>Austria</td>\n" +
-        "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
-        "                <td><button>edit</button></td>\n" +
-        "            </tr>\n"+
-        "            <tr>\n" +
-        "                <td>5</td>\n" +
-        "                <td>Project5</td>\n" +
-        "                <td>Austria</td>\n" +
-        "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
-        "                <td><button>edit</button></td>\n" +
-        "            </tr>\n"
+   
+    // div.innerHTML = "   \n" +
+    //     "                <p>Project ID</p>" +
+    //     "                <p>Title</p>" +
+    //     "                <p>Leader</p>" +
+    //     "                <p>Description</p>" +
+    //     "                <p>Edit</p>" +
+    //     "            \n" +
+    //     "            <p>1</p>" +
+    //     "                <p>Project1</p>" +
+    //     "                <p>Germany</p>" +
+    //     "                <p>Test text Test text Test text Test text Test text Test text Test text Test text Test text</p>" +
+    //     "                <p><button>edit</button></p>\n" +
+    //     "                <td>2</td>" +
+    //     "                <td>Project2</td>" +
+    //     "                <td>Mexico</td>" +
+    //     "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>" +
+    //     "                <td><button>edit</button></td>" +
+    //     "                <td>3</td>\n" +
+    //     "                <td>Project3</td>\n" +
+    //     "                <td>Austria</td>\n" +
+    //     "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
+    //     "                <td><button>edit</button></td>\n" +
+    //     "            </tr>\n"+
+    //     "            <tr>\n" +
+    //     "                <td>4</td>\n" +
+    //     "                <td>Project4</td>\n" +
+    //     "                <td>Austria</td>\n" +
+    //     "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
+    //     "                <td><button>edit</button></td>\n" +
+    //     "            </tr>\n"+
+    //     "            <tr>\n" +
+    //     "                <td>5</td>\n" +
+    //     "                <td>Project5</td>\n" +
+    //     "                <td>Austria</td>\n" +
+    //     "                <td>Test text Test text Test text Test text Test text Test text Test text Test text Test text</td>\n" +
+    //     "                <td><button>edit</button></td>\n" +
+    //     "            </tr>\n"
 
 }
 
