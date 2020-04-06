@@ -1,13 +1,24 @@
 <html>
 <body>
 <?php 
-include 'dbConn.php';
-$target_dir="proyect_1/";
-$target_file=$target_dir.basename($_FILES["imgfile"]["name"]);
-echo $target_file;
+
+if(isset($_POST['editbtn'])){
+    Editbutton();
+}
+
+if(isset($_POST['deletebtn'])){
+    Deletebtn();
+}
+
+function Editbutton(){
+    include 'dbConn.php';
+    $target_dir="proyect_1/";
+    $target_file=$target_dir.basename($_FILES["imgfile"]["name"]);
+    echo $target_file;
     //echo $target_file;
     //$filename=basename($_FILES["imgfile"]["name"]); 
     $sql="Select imgUrl from project where ProjectID=".$_POST['id'];
+    echo $sql;
     $result=$conn->query($sql);
     while($row = $result->fetch_assoc()) { 
             if ($target_file=='proyect_1/'){
@@ -29,7 +40,16 @@ echo $target_file;
                 }
             }    
     }
+}
 
+
+function Deletebtn(){
+    include 'dbConn.php';
+    $sql="Delete from project where ProjectID=".$_POST["id"];
+    echo $sql;
+    $conn->query($sql);
+    header("location:project.php");
+}
 
 ?>
 </body>

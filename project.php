@@ -72,7 +72,7 @@ include "dbConn.php";
                 $result=$conn->query($sql);
                 while($row=$result->fetch_assoc()){
                     echo "<div class='displayTag1'>";
-                    // echo "<p id='projectid' >" .$row["ProjectID"]. "</p>" ;
+                    echo "<p id='projectid' >" .$row["ProjectID"]. "</p>" ;
                     echo "<p id='pn".$row["ProjectID"]."'>" .$row["ProjectName"]. "</p>";
                     echo "<p id='pd".$row["ProjectID"]."'>" .$row["ProjectDescription"]. "</p>";
                     echo "<img id='imgsrc".$row["ProjectID"]."' src='".$row["imgUrl"]."'>" ;
@@ -147,8 +147,8 @@ include "dbConn.php";
           <p>Date:</p>
           <input type="Date" id="date"  name="date" required>
 
-          <button type="submit" class="btn" >Edit</button>
-          <button type="button" class="btn cancel"  onclick="closeForm()">Close</button>
+          <button type="submit" class="editbtn" name="editbtn" >Edit</button>
+          <button type="submit" class="deletebtn" name="deletebtn" >Delete</button>
         </form>
         </div>
     </div>

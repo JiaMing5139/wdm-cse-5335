@@ -142,8 +142,8 @@ else{
           <p>Date:</p>
           <input type="Date" id="date"  name="date" required>
 
-          <button type="submit" class="btn" >Edit</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          <button type="submit" class="Editbtn" name="editbtn" >Edit</button>
+          <button type="submit" class="Deletebtn" name="deletebtn">Delete</button>
         </form>
         </div>
     </div>

@@ -99,8 +99,8 @@ else{
 	<div class="edit-popup">
     <a class="close" href="#">&times;</a>
     <form action="insertintoevent.php" method="post" enctype="multipart/form-data" class="form-container">
-           <!-- <p>Event ID:</p> 
-          <input type="text" id="inid" name="ineventid"  required > -->
+          <p>Event ID:</p> 
+          <input type="text" id="inid" name="ineventid"  required readonly> 
           
           <!-- <p>User ID:</p>
           <input type="text" id="inuserid" name="inuserid" required> -->
@@ -116,7 +116,7 @@ else{
           <input type="Date" id="indate"  name="indate" required> 
 
           <button type="submit" class="btn" >Add</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button> 
+          <!-- <button type="button" class="btn cancel" onclick="closeForm()">Close</button>  -->
 
         </form>
         </div>
@@ -141,8 +141,8 @@ else{
           <p>Date:</p>
           <input type="Date" id="date"  name="date" required>
 
-          <button type="submit" class="btn" >Edit</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          <button type="submit" class="Editbtn" name="editbtn" >Edit</button>
+          <button type="submit" class="Deletebtn" name="deletebtn" >Delete</button>
         </form>
         </div>
     </div>

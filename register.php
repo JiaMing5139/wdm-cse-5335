@@ -50,6 +50,7 @@ $rowcount=mysqli_num_rows($result);
     ?>
     <script>
         alert("User successfully registerd!!!");
+        
         setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 500);
     </script>
     <?php
