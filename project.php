@@ -60,6 +60,7 @@ include "dbConn.php";
         <h3 id="clickedName">Project</h3>
         <div>
             <div class="displayTag">
+                <p><b>Project ID</p>
                 <p><b>Project Name</p>
                 <p><b>Project Description</p>
                 <p><b>ImageURL</p>

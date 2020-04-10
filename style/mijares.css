@@ -484,7 +484,7 @@ body{
 .Registru .col1{
     margin-top: 50px;
     display: flex;
-    justify-content:center;
+    justify-content:left;
 }
 .Registru .col1 img{
     width: 200px;
@@ -492,7 +492,7 @@ body{
 }
 
 .Registru  .col2{
-    margin-left: 100px;
+    margin-left: 150px;
 }
 
 .Registru input{

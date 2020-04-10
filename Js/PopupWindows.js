@@ -63,7 +63,7 @@ function openRegisterWindow(){
         "<h4>Registro</h4>\n" +
         "\n" +
         "    <div class=\"col1\">\n" +
-        "        <div>\n" +
+        "        <div align=\" left\">\n" +
         "            <div>\n" +
         "            <input placeholder=\"Nombre\" name=\"Fname\" required> <input type=\"email\" placeholder=\"Correo\" name=\"Email\" required>\n" +
         "            </div>\n" +
@@ -92,7 +92,7 @@ function openRegisterWindow(){
 
 var check = function() {
     if (document.getElementById('pass').value ==
-      document.getElementById('con-pass').value) {
+      document.getElementById('con-pass').value && document.getElementById('pass').value!='' ) {
         document.getElementById('btn').disabled=false;  
       document.getElementById('message').style.color = 'green';    
       document.getElementById('message').innerHTML = 'matching';

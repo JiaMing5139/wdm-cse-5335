@@ -18,6 +18,7 @@ $rowcount=mysqli_num_rows($result);
   if($rowcount>0){?>
   <script>
     alert("Email already exists..");  
+    setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 500);
   </script>
   <?php
   }
@@ -30,6 +31,7 @@ $rowcount=mysqli_num_rows($result);
   try{
     $mail=new PHPMailer(true);
     $mail->IsSMTP(); 
+    $mail->SMTPDebug = 2;
     $mail->SMTPAuth=true;
     $mail->SMTPSecure='ssl';
     $mail->Host='smtp.gmail.com';
@@ -43,6 +45,7 @@ $rowcount=mysqli_num_rows($result);
     $mail->Body=$message;
     $mail->AddAddress($email);
     $mail->send();
+    
   }
   catch(Exception $e){
     echo $e->getMessage();
