@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +15,18 @@
 <!--    <script>-->
 <!--        if(sessionStorage.getItem('username')==null){-->
 
-<!--        }-->
-<!--    </script>-->
+<?php
+    if(empty($_SESSION["name"])){?>
+        <script>
+            sessionStorage.setItem("name",0);
+        </script>
+    <?php
+    }
+    else{ ?>
+        <script>sessionStorage.setItem("name",1);</script>
+    <?php
+    }
+?>
 
 <div class="nav-container">
     <img src="image/logo.png">
@@ -27,12 +40,17 @@
     <a href="equipo.php"style="color: #454cde">equipo</a>
     <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
     <a onclick="openRegisterWindow()">Registru</a>
-    <a href="User.html" id="userTag" style="display: none">User</a>
+    <a href="project.php" id="userTag" >User</a>
     <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
         <i class="fa fa-bars"></i>
     </a>
 </div >
-
+<script>
+    if(sessionStorage.getItem("name")==0)
+    {
+        document.getElementById("userTag").style.display="none";
+    }
+</script>
 
 <div id="wrapper" class="equipo">
 <div id="a">

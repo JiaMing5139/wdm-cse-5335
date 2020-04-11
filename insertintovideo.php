@@ -17,19 +17,39 @@ $date=$_POST['indate'];
 if ($target_file=='proyect_1/')
 {
     $query="Insert into `video` (UserID, VideoType, Description, VideoUrl, Date) values ('".$_SESSION["id"]."','".$vt."','".$vd."','','".$date."')";
-    $conn->query($query);
-    echo $query;
-    header("location:video.php");
-}    
-else{
-    if(move_uploaded_file($_FILES["imgfile"]["tmp_name"], $target_file))
-    {
-        $query="Insert into `video` (UserID, VideoType, Description, VideoUrl, Date) values ('".$_SESSION["id"]."','".$vt."','".$vd."','".$target_dir."','".$date."')";
-        $conn->query($query);
-        echo $query; 
+    if($conn->query($query))
+    {   
         header("location:video.php");
     }
-}
+    else{
+        $message="Error: " . $query . "<br>" . $conn->error;
+        echo "<script type='text/javascript'>alert('$message');</script>";  
+    ?>
+    <script>
+        setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 500);
+    </script> 
+    <?php 
+    }
+}    
+else{
+    if(move_uploaded_file($_FILES["videofile"]["tmp_name"], $target_file))
+    {
+        $query="Insert into `video` (UserID, VideoType, Description, VideoUrl, Date) values ('".$_SESSION["id"]."','".$vt."','".$vd."','".$target_dir."','".$date."')";
+        if($conn->query($query))
+        {   
+                header("location:video.php");
+        }else{
+                $message="Error: " . $query . "<br>" . $conn->error;
+                echo "<script type='text/javascript'>alert('$message');</script>";  
+            ?>
+            <script>
+                setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 500);
+            </script> 
+            <?php 
+            }
+        }            
+    }
+
 ?>
 </body>
 </html>

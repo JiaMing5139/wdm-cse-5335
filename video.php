@@ -36,7 +36,7 @@ else{
         <a href="equipo.php">equipo</a>
         <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
         <a onclick="openRegisterWindow()">Registru</a>
-        <a href="project.php" id="userTag" style="display: none;color: #454cde">User</a>
+        <a href="project.php" id="userTag" style="color: #454cde">User</a>
         <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
             <i class="fa fa-bars"></i>
         </a>
@@ -107,7 +107,6 @@ else{
 
           <p>Video Type:</p>
           <input type="text" id="invideotype" name="invideotype" required>
- 
 
           <p>Video Description:</p>
           <textarea id="invideodescription" name="invideodescription" rows="5" width="50%"></textarea>      

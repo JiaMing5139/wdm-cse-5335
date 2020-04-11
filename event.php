@@ -35,7 +35,7 @@ else{
         <a href="equipo.php">equipo</a>
         <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
         <a onclick="openRegisterWindow()">Registru</a>
-        <a href="project.php" id="userTag" style="display: none;color: #454cde">User</a>
+        <a href="project.php" id="userTag" style="color: #454cde">User</a>
         <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
             <i class="fa fa-bars"></i>
         </a>
@@ -74,7 +74,6 @@ else{
             
             <?php 
                 $sql="Select * from events where UserID='".$_SESSION["id"]."'";
-                //echo $sql;
                 $result=$conn->query($sql);
                 while($row=$result->fetch_assoc()){
                     echo "<div class='displayTag1'>";
@@ -89,7 +88,6 @@ else{
                     echo "</div>";
                     echo "</br>";
                 }
-                
             ?>
             
         </div>
