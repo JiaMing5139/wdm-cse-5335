@@ -108,6 +108,9 @@ h4{
 /*}*/
 
 /*define style of footer bar*/
+footer{
+    margin-top: 30px;
+}
 footer .container{
     position: relative;
     background-color: #04091e;
@@ -874,6 +877,7 @@ body{
     height: 80%;
     position: relative;
     transition: all 5s ease-in-out;
+
   }
   
   .edit-popup h2 {
@@ -938,6 +942,7 @@ body{
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+    z-index: 9999;
 }
 .overlay:target {
   visibility: visible;

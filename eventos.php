@@ -38,7 +38,7 @@
         include "query.php";
         if($result = queryEvents()){
             echo '    <div class="titleLogo">
-         <h1>Here are all events</h1>
+         <h1>Here are all the events</h1>
           <h1>please check them!</h1>
                 </div>';
 
