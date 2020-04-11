@@ -43,7 +43,7 @@ function closePopupWindow() {
 }
 
 function openLoginPopupWindow() { 
-    if(sessionStorage.getItem("name")==0){
+    if(!sessionStorage.getItem("name")){
         closePopupWindow() ; // only have on window at same time
         const Popupwindow = this.document.getElementById("LoginWindow");
         const  divPop = this.document.createElement("div");
@@ -146,14 +146,29 @@ function validateReg(){
 
 
 var check = function() {
-    if (document.getElementById('pass').value ==
-      document.getElementById('con-pass').value && document.getElementById('pass').value!='' ) {
-        //document.getElementById('btn').disabled=false;  
-      document.getElementById('message').style.color = 'green';    
-      document.getElementById('message').innerHTML = 'matching';
-    } else {
-      document.getElementById('message').style.color = 'red';
-      document.getElementById('message').innerHTML = 'not matching';
+
+    if(!passwordRule(document.getElementById('pass').value)){
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'Password should have 8 to 10  characters';
+        return;
     }
-  }
+    if (document.getElementById('pass').value ==
+        document.getElementById('con-pass').value && document.getElementById('pass').value != '') {
+        //document.getElementById('btn').disabled=false;  
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').innerHTML = 'matching';
+    } else {
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'not matching';
+    }
+}
+
+function passwordRule(pasw){
+    console.assert(typeof pasw !== "string");
+ //   var rule = '^(?=.*[\\w])(?=.*[\\W])[\\w\\W]{8,}$'
+     return  pasw.length > 8 &&  pasw.length < 10;
+
+}
+
+
 

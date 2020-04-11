@@ -15,7 +15,7 @@
 <!--        }-->
 <!--    </script>-->
 
-<div class="nav-container">
+<div class="nav-container" id="myTopnav">
     <img src="image/logo.png">
     <a href="index.html">inicio</a>
     <a href="semblanza.html">semblanza</a>

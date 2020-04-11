@@ -4,5 +4,5 @@
     header("location:index.html");
 ?>
 <script>
-    sessionStorage.getItem("name")==0;
+    sessionStorage.clear();
 </script>

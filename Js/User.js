@@ -156,3 +156,14 @@ function setActive(tag) {
     a.setAttribute("class","active");
 
 }
+
+function signout() {
+        sessionStorage.clear();
+        window.location.href="index.html"
+}
+
+function ifLogin() {
+    if(sessionStorage.getItem("name")){
+        return true
+    }else return false;
+}

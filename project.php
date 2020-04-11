@@ -9,6 +9,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="style/mijares.css">
     <script type="text/javascript" src="Js/User.js"></script>
     <script type="text/javascript" src="Js/PopupWindows.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -25,8 +26,15 @@ include "dbConn.php";
  }
  else{
 ?>
+     <script>
+         if(!ifLogin()){
+             console.log(ifLogin());
+             alert("please login first")
+             window.location.href="index.html"
+         }
+     </script>
 
-<div class="nav-container">
+<div class="nav-container" id="myTopnav">
         <img src="image/logo.png">
         <a href="index.html">inicio</a>
         <a href="semblanza.html">semblanza</a>
@@ -36,7 +44,7 @@ include "dbConn.php";
          <a href="http://jxp8516.uta.cloud/wordpress/">blog</a>
         <a href="videos.html">videos</a>    
         <a href="equipo.php">equipo</a>
-        <a href="openLoginPopupWindow">Iniete De Sesiem</a>
+        <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
         <a onclick="openRegisterWindow()">Registru</a>
         <a href="project.php" id="userTag" style="color: #454cde">User</a>
     <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
@@ -48,7 +56,7 @@ include "dbConn.php";
     <div class="titleRow">
         <h1>Welcome</h1>
         <h2 id="username">User: <?php echo $_SESSION["name"] ?> </h2>
-        <a href="signout.php">sign out</a>
+        <text onclick="signout()" >sign out</text>
     </div>
     <hr>
 
@@ -118,7 +126,7 @@ include "dbConn.php";
 
 </div>
     <div id="popup1" class="overlay">
-	<div class="edit-popup">
+	<div class="edit-popup" >
     <a class="close" href="#">&times;</a>
     <form action="editproject.php" method="post" enctype="multipart/form-data" class="form-container">
         <table>  

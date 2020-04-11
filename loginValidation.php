@@ -20,16 +20,27 @@ if ($result=mysqli_query($conn,$sql))
     //echo $row[0].$row[1];
     $_SESSION["id"]=$row[0];
     $_SESSION["name"]=$row[1];
-    header("location:project.php");
+    echo '<script>
+
+    sessionStorage.setItem("name",0)
+    console.log(sessionStorage)
+    window.location.href = "project.php"
+    </script>';
+
+//    header("location:project.php");
+
   }
+
   else{
 ?>
+
 <script>    
     alert("PHP Validation: Invalid Email/Password....");
     <?php echo  $_SERVER["HTTP_REFERER"] ?>;
     setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 500);  
     //header("location:".$_SERVER["HTTP_REFERER"]);
 </script>
+
 <?php  
 }
 

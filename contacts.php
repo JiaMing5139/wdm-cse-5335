@@ -34,7 +34,7 @@ include 'dbConn.php';
     <div class="titleRow">
         <h1>Welcome</h1>
         <h2 id="username">User: <?php echo $_SESSION["name"] ?></h2>
-        <a href="signout.php">sign out</a>
+        <text onclick="signout()" >sign out</text>
 
     </div>
     <hr>

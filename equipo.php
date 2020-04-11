@@ -14,21 +14,21 @@
 <body>
 <!--    <script>-->
 <!--        if(sessionStorage.getItem('username')==null){-->
-
+<!---->
 <?php
-    if(empty($_SESSION["name"])){?>
-        <script>
-            sessionStorage.setItem("name",0);
-        </script>
-    <?php
-    }
-    else{ ?>
-        <script>sessionStorage.setItem("name",1);</script>
-    <?php
-    }
-?>
+//    if(empty($_SESSION["name"])){?>
+<!--        <script>-->
+<!--            sessionStorage.setItem("name",0);-->
+<!--        </script>-->
+<!--    --><?php
+//    }
+//    else{ ?>
+<!--        <script>sessionStorage.setItem("name",1);</script>-->
+<!--    --><?php
+//    }
+//?>
 
-<div class="nav-container">
+<div class="nav-container" id="myTopnav">
     <img src="image/logo.png">
     <a href="index.html">inicio</a>
     <a href="semblanza.html">semblanza</a>
@@ -40,7 +40,7 @@
     <a href="equipo.php"style="color: #454cde">equipo</a>
     <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
     <a onclick="openRegisterWindow()">Registru</a>
-    <a href="project.php" id="userTag" >User</a>
+    <a href="project.php" id="userTag" style="display: none">User</a>
     <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
         <i class="fa fa-bars"></i>
     </a>
