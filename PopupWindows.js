@@ -10,6 +10,15 @@ function validate(){
 
 }
 
+function  openResponsive () {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "nav-container") {
+        x.className += " responsive";
+    } else {
+        x.className = "nav-container";
+    }
+}
+
 function closePopupWindow() {
     const Popupwindow = this.document.getElementById("LoginWindow");
     let removeTarget = this.document.getElementById("popupWindow");

@@ -31,14 +31,18 @@ include "dbConn.php";
         <a href="index.html">inicio</a>
         <a href="semblanza.html">semblanza</a>
         <a href="centro augusto mijares.html" >centro augusto mijares</a>
-        <a href="proyectos.html">proyectos</a>
-        <a href="eventos.html">eventos</a>
+        <a href="proyectos.php">proyectos</a>
+        <a href="eventos.php">eventos</a>
          <a href="http://jxp8516.uta.cloud/wordpress/">blog</a>
         <a href="videos.html">videos</a>    
         <a href="equipo.php">equipo</a>
         <a href="openLoginPopupWindow">Iniete De Sesiem</a>
         <a onclick="openRegisterWindow()">Registru</a>
         <a href="project.php" id="userTag" style="display: none;color: #454cde">User</a>
+    <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
+        <i class="fa fa-bars"></i>
+    </a>
+
     </div>
 <div id="wrapper" class="User">
     <div class="titleRow">
@@ -86,7 +90,7 @@ include "dbConn.php";
             ?>
         </div>
         <div class='box'>        
-            <a class='button' id="iddButton" href='#popup2'>Add</button>
+            <a class='button' id="iddButton" href='#popup2'>Add</a>
         </div>
     </div>
 

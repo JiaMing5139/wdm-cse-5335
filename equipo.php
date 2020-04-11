@@ -5,6 +5,7 @@
     <title>Equipo</title>
     <link rel="stylesheet" type="text/css" href="style/mijares.css">
     <script type="text/javascript" src="Js/PopupWindows.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -19,14 +20,17 @@
     <a href="index.html">inicio</a>
     <a href="semblanza.html">semblanza</a>
     <a href="centro augusto mijares.html">centro augusto mijares</a>
-    <a href="proyectos.html">proyectos</a>
-    <a href="eventos.html">eventos</a>
+    <a href="proyectos.php">proyectos</a>
+    <a href="eventos.php">eventos</a>
      <a href="http://jxp8516.uta.cloud/wordpress/">blog</a>
     <a href="videos.html">videos</a>
     <a href="equipo.php"style="color: #454cde">equipo</a>
     <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
     <a onclick="openRegisterWindow()">Registru</a>
     <a href="User.html" id="userTag" style="display: none">User</a>
+    <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
+        <i class="fa fa-bars"></i>
+    </a>
 </div >
 
 

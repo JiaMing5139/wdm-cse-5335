@@ -5,24 +5,31 @@
     <title>Inicio</title>
     <cookie-value></cookie-value>
     <link rel="stylesheet" type="text/css" href="style/mijares.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="Js/PopupWindows.js"></script>
 </head>
 <body>
+<script>
 
+</script>
 
-<div class="nav-container">
+<div class="nav-container" id="myTopnav">
     <img src="image/logo.png">
     <a href="index.html" style="color: #454cde">inicio</a>
     <a href="semblanza.html">semblanza</a>
     <a href="centro augusto mijares.html">centro augusto mijares</a>
-    <a href="proyectos.html">proyectos</a>
-    <a href="eventos.html">eventos</a>
+    <a href="proyectos.php">proyectos</a>
+    <a href="eventos.php">eventos</a>
     <a href="http://jxp8516.uta.cloud/wordpress/">blog</a>
     <a href="videos.html">videos</a>
     <a href="equipo.php">equipo</a>
     <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
     <a  onclick="openRegisterWindow()">Registru</a>
     <a href="project.php" id="userTag" style="display: none">User</a>
+    <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
+    <i class="fa fa-bars"></i>
+    </a>
+
 </div >
 <div id="wrapper" class="inicio">
 <div>
@@ -104,7 +111,9 @@
 </div>
 <div id="LoginWindow"></div>
 <div id="RegisterWindow"></div>
+
 </body>
 </html>
 
 <script type="text/javascript" src="Js/afterOnload.js"></script>
+
