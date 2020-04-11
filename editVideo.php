@@ -29,11 +29,12 @@ function Editbutton(){
     {
         $sql=$conn->prepare("Update video SET VideoType=?, Description=?, VideoUrl=? ,Date=? where VideoID=? and UserID=?");
         $sql->bind_param('ssssii',$_POST['videotype'],$_POST['videodescription'],$_POST['videourl'],$_POST["date"],$_POST['videoid'],$_SESSION["id"]);
-        $sql->execute();
-        // $query="Insert into `video` (VideoID, UserID, VideoType, Description, VideoUrl, Date) values ('".$vid."','".$_SESSION["id"]."','".$vt."','".$vd."','".$vu."','".$date."')";
-        // $conn->query($query);
-        // echo $query;   
-        header("location:video.php");
+        if($sql->execute()){   
+            header("location:video.php");
+        }else{
+            $message="Error: " . $sql . "<br>" . $conn->error;
+            echo "<script type='text/javascript'>alert('$message');</script>";  
+        }
     }
     else
     {
@@ -41,13 +42,18 @@ function Editbutton(){
         {
             $sql=$conn->prepare("Update video SET VideoType=?, Description=?, VideoUrl=? ,Date=? where VideoID=? and UserID=?");
             $sql->bind_param('ssssii',$_POST['videotype'],$_POST['videodescription'],$_POST['videourl'],$_POST["date"],$_POST['videoid'],$_SESSION["id"]);
-            $sql->execute();
+            if($sql->execute()){
+                header("location:video.php");
+            }else{
+                $message="Error: " . $sql . "<br>" . $conn->error;
+                echo "<script type='text/javascript'>alert('$message');</script>";
+            }
 
             // $query="Insert into `project` (VideoID, UserID, VideoType, Description, VideoUrl, Date) values ('".$vid."','".$_SESSION["id"]."',".$vt."','".$vd."','".$target_file."','".$date."')";
             // $conn->query($query);
             // echo $query;    
                     
-            header("location:video.php");
+            
         }
     }    
 }

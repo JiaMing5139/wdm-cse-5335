@@ -1,14 +1,23 @@
 
 
-// function validate(){
-//     console.log("vaildate")
-//     var username = document.getElementById("user").value;
-//     var password = document.getElementById("password").value;
-//     window.location.replace("User.html")
-//     if ( username == "abcd" && password == "abcd"){
-//         sessionStorage.setItem("username",username);
-
-// }
+function validate(){
+    var username = document.forms["form1"]["username"];               
+    var password = document.forms["form1"]["pass"];  
+                    
+    if (username.value == "" || password.value == "" )
+    {
+        if (username.value == "")                                  
+        { 
+            window.alert("Javascript Validation: Please enter your username.");
+        } 
+                          
+        if (password.value == "")                        
+        { 
+            window.alert("Javascript Validation: Please enter your password."); 
+        } 
+    }    
+    return true;
+}
 
 function closePopupWindow() {
     const Popupwindow = this.document.getElementById("LoginWindow");
@@ -26,28 +35,33 @@ function closePopupWindow() {
 }
 
 function openLoginPopupWindow() { 
-    closePopupWindow() ; // only have on window at same time
-    const Popupwindow = this.document.getElementById("LoginWindow");
-    const  divPop = this.document.createElement("div");
-    divPop.className = "InieteDeSesiem"
-    divPop.id = "popupWindow"
-    divPop.innerHTML ="<img id = 'close' onclick='closePopupWindow()' src='image/close.png'> </img>\n" +
-        "    <form action=\"loginValidation.php\" method=\"post\">\n" +
-        "<div class=\"content_container\">\n" +
-        "    <img src='image/logo.png'>\n" +
-        "    <h2>CENTRO AUGUSTO MIJARES </h2>\n" +
-        "    <h3>Iniciar Sesion</S></h3>\n" +
-        "    <div>\n" +
-        "        <input type=\"text\" id=\"user\"  name=\"username\" placeholder=\"Nombre de Usuario o Correo\">\n" +
-        "        <input type=\"password\" id=\"password\" name=\"password\" placeholder=\"Contrasena\">\n" +
-        "        <div>\n" +
-        "            <button class=\"submitbutton\" type=\"submit\" value=\"ENTRAR\" id=\"submit\">ENTRAR</button>\n" +
-        "        </div>\n" +
-        "    </div>\n" +
-        "</div>\n" +
-        "</form>"
-     Popupwindow.appendChild(divPop);
-
+    if(sessionStorage.getItem("name")==0){
+        closePopupWindow() ; // only have on window at same time
+        const Popupwindow = this.document.getElementById("LoginWindow");
+        const  divPop = this.document.createElement("div");
+        divPop.className = "InieteDeSesiem"
+        divPop.id = "popupWindow"
+        divPop.innerHTML ="<img id = 'close' onclick='closePopupWindow()' src='image/close.png'> </img>\n" +
+            "    <form action=\"loginValidation.php\" name=\"form1\" method=\"post\">\n" +
+            "<div class=\"content_container\">\n" +
+            "    <img src='image/logo.png'>\n" +
+            "    <h2>CENTRO AUGUSTO MIJARES </h2>\n" +
+            "    <h3>Iniciar Sesion</S></h3>\n" +
+            "    <div>\n" +
+            "        <input type=\"text\" id=\"user\"  name=\"username\" placeholder=\"Nombre de Usuario o Correo\" required>\n" +
+            "        <input type=\"password\" id=\"password\" name=\"password\" placeholder=\"Contrasena\" required>\n" +
+            "        <div>\n" +
+            "            <button class=\"submitbutton\" type=\"submit\" onclick=\"validate()\" value=\"ENTRAR\" id=\"submit\">ENTRAR</button>\n" +
+            "        </div>\n" +
+            "    </div>\n" +
+            "</div>\n" +
+            "</form>"
+        Popupwindow.appendChild(divPop);
+    }
+    else
+    {
+        alert("Already logged in!!");
+    }
 }
 
 function openRegisterWindow(){
@@ -57,7 +71,7 @@ function openRegisterWindow(){
     divPop.className = "Registru"
     divPop.id = "BigPopupWindow"
     divPop.innerHTML = "  <img id = 'close' onclick='closePopupWindow()' src='image/close.png'> </img>\n" +
-    "    <form action=\"register.php\" method=\"post\">\n" +
+    "    <form action=\"register.php\" name=\"form2\" method=\"post\">\n" +
         "<div class=\"content_container\">\n" +
         "<img src=\"image/logo.png\">\n" +
         "<h4>Registro</h4>\n" +
@@ -75,7 +89,7 @@ function openRegisterWindow(){
         "                <input style=\"width: 750px\" placeholder=\"Direccion\" name=\"address\">\n" +
         "            </div>\n" +
         "            <div style=\"display: flex\">\n" +
-        "                <button type=\"submit\" id=\"btn\" style=\"margin-left: 20px\" disabled>Guardar</button>\n" +
+        "                <button type=\"submit\" id=\"btn\" onclick=\"validateReg\" style=\"margin-left: 20px\" >Guardar</button>\n" +
         "            </div>\n" +
         "        </div>\n" +
         "        <div class=\"col2\">\n" +
@@ -90,10 +104,43 @@ function openRegisterWindow(){
 
 }
 
+
+function validateReg(){
+    var username = document.forms["form2"]["Fname"];
+    var email = document.forms["form2"]["Email"];               
+    var password = document.forms["form2"]["password"];  
+    var con_pass= document.forms["form2"]["con-pass"];
+                    
+    if (username.value == "" || password.value == "" || email.value=="" || con_pass=="" )
+    {
+        if (username.value == "")                                  
+        { 
+            window.alert("Javascript Validation: Please enter your name.");
+        } 
+         
+        if (email.value == "")                                  
+        { 
+            window.alert("Javascript Validation: Please enter your email.");
+        }
+
+        if (con-pass.value == "")                                  
+        { 
+            window.alert("Javascript Validation: Please enter confirm password");
+        }
+
+        if (password.value == "")                        
+        { 
+            window.alert("Javascript Validation: Please enter your password."); 
+        } 
+    }    
+    return true;
+}
+
+
 var check = function() {
     if (document.getElementById('pass').value ==
       document.getElementById('con-pass').value && document.getElementById('pass').value!='' ) {
-        document.getElementById('btn').disabled=false;  
+        //document.getElementById('btn').disabled=false;  
       document.getElementById('message').style.color = 'green';    
       document.getElementById('message').innerHTML = 'matching';
     } else {

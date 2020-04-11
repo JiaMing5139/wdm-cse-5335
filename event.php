@@ -23,7 +23,7 @@ if(empty($_SESSION["name"])){?>
 }
 else{
 ?>
-    <div class="nav-container">
+        <div class="nav-container">
         <img src="image/logo.png">
         <a href="index.html">inicio</a>
         <a href="semblanza.html">semblanza</a>
@@ -35,7 +35,7 @@ else{
         <a href="equipo.php">equipo</a>
         <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
         <a onclick="openRegisterWindow()">Registru</a>
-        <a href="project.php" id="userTag" style="display: none;color: #454cde">User</a>
+        <a href="project.php" id="userTag" style="color: #454cde">User</a>
     </div>
     <div id="wrapper" class="User">
     <div class="titleRow">
@@ -43,10 +43,7 @@ else{
         <h1>Welcome</h1>
         <h2 id="username">User: <?php echo $_SESSION["name"] ?></h2>
         <a href="signout.php" >sign out</a>
-
     </div>
-
-
 
     <hr>
 
@@ -71,7 +68,6 @@ else{
             
             <?php 
                 $sql="Select * from events where UserID='".$_SESSION["id"]."'";
-                //echo $sql;
                 $result=$conn->query($sql);
                 while($row=$result->fetch_assoc()){
                     echo "<div class='displayTag1'>";
@@ -85,8 +81,7 @@ else{
                     echo "</div>";
                     echo "</div>";
                     echo "</br>";
-                }
-                
+                }    
             ?>
             
         </div>

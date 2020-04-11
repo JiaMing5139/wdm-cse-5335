@@ -38,7 +38,7 @@ include "dbConn.php";
         <a href="equipo.php">equipo</a>
         <a href="openLoginPopupWindow">Iniete De Sesiem</a>
         <a onclick="openRegisterWindow()">Registru</a>
-        <a href="project.php" id="userTag" style="display: none;color: #454cde">User</a>
+        <a href="project.php" id="userTag" style="color: #454cde">User</a>
     </div>
 <div id="wrapper" class="User">
     <div class="titleRow">
@@ -82,8 +82,7 @@ include "dbConn.php";
                     echo "<a  class='button' href='#popup1' onclick='btnEdit(".$row['ProjectID'].")'> Edit </a>";
                     echo "</div>";
                     echo "</div>";
-                }
-                
+                }    
             ?>
         </div>
         <div class='box'>        
@@ -95,9 +94,6 @@ include "dbConn.php";
 	<div class="edit-popup">
     <a class="close" href="#">&times;</a>
     <form action="insertintoproject.php" method="post" enctype="multipart/form-data" class="form-container">
-           <!-- <p>Project ID:</p> 
-          <input type="text" id="inid" name="id"  required >
-           -->
           <p>Project Name:</p>
           <input type="text" id="inprojectname" name="projectname" required>
 
@@ -110,9 +106,7 @@ include "dbConn.php";
           <p>Date:</p>
           <input type="Date" id="indate"  name="date" required> 
 
-          <button type="submit" class="btn" >Add</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button> 
-
+          <button type="submit" class="btn" >Add</button> 
         </form>
         </div>
     </div>
@@ -176,8 +170,7 @@ include "dbConn.php";
             <?php } ?>
     
     <script>
-      function btnEdit(x) {
-        // alert(x);  
+      function btnEdit(x) {  
         document.getElementById('id').value=x;
         pd=document.getElementById("pd"+x).innerHTML;
         pn=document.getElementById("pn"+x).innerHTML;
