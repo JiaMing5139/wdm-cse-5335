@@ -111,8 +111,8 @@ else{
           <p>Video Description:</p>
           <textarea id="invideodescription" name="invideodescription" rows="5" width="50%"></textarea>      
 
-          <p>Add VideoUrl?<p>
-          <input type="file" id="invideofile" name="videofile" >      
+          <p>upload a video (mp4 only!)<p>
+          <input type="file" id="invideofile" accept="audio/mp4" name="videofile" >
 
           <p>Date:</p>
           <input type="Date" id="indate"  name="indate" required> 

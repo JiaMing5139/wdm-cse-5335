@@ -224,7 +224,7 @@ body{
     margin-top: 5%;
 }
 
-.inicio .videoDescription-container iframe{
+.inicio .videoDescription-container video{
     padding: 50px;
 }
 
