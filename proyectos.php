@@ -26,7 +26,7 @@ session_start();
     <a href="proyectos.php" style="color: #454cde">proyectos</a>
     <a href="eventos.php">eventos</a>
      <a href="http://jxp8516.uta.cloud/wordpress/">blog</a>
-    <a href="videos.html">videos</a>
+    <a href="videos.php">videos</a>
     <a href="equipo.html">equipo</a>
     <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
     <a onclick="openRegisterWindow()">Registru</a>

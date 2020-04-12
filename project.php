@@ -42,7 +42,7 @@ include "dbConn.php";
         <a href="proyectos.php">proyectos</a>
         <a href="eventos.php">eventos</a>
          <a href="http://jxp8516.uta.cloud/wordpress/">blog</a>
-        <a href="videos.html">videos</a>    
+        <a href="videos.php">videos</a>    
         <a href="equipo.php">equipo</a>
         <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
         <a onclick="openRegisterWindow()">Registru</a>
