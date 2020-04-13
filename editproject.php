@@ -27,7 +27,9 @@ function Editbutton(){
                 $sql->bind_param('ssssi',$_POST["projectname"],$_POST["projdesc"],$row["imgUrl"],$_POST["date"],$_POST["id"]);
                 if($sql->execute()){
                     $sql->close();
-                    header("location:project.php");
+                    echo  '<script>
+    window.location.href = "project.php"
+    </script>';
                 }else{
                     $message="Error: " . $sql . "<br>" . $conn->error;
                     echo "<script type='text/javascript'>alert('$message');</script>"; 
@@ -41,7 +43,9 @@ function Editbutton(){
                     $sql->bind_param('ssssi',$_POST["projectname"],$_POST["projdesc"],$target_file,$_POST["date"],$_POST["id"]);
                     if($sql->execute()){
                         $sql->close();
-                        header("location:project.php");
+                        echo  '<script>
+    window.location.href = "project.php"
+    </script>';
                     }else{
                         $message="Error: " . $sql . "<br>" . $conn->error;
                         echo "<script type='text/javascript'>alert('$message');</script>"; 
@@ -57,7 +61,9 @@ function Deletebtn(){
     $sql="Delete from project where ProjectID=".$_POST["id"];
     //echo $sql;
     if($conn->query($sql)){
-        header("location:project.php");
+        echo  '<script>
+    window.location.href = "project.php"
+    </script>';
     }
     else{
         $message="Error: " . $sql . "<br>" . $conn->error;

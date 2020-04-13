@@ -30,7 +30,6 @@ $rowcount=mysqli_num_rows($result);
   require_once('phpmailer/PHPMailerAutoload.php');
   try{
     $mail=new PHPMailer(true);
-    $mail->IsSMTP(); 
     $mail->SMTPDebug = 2;
     $mail->SMTPAuth=true;
     $mail->SMTPSecure='ssl';

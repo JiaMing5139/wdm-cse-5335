@@ -15,8 +15,10 @@ $date=$_POST['indate'];
 
 $query="Insert into `events` (UserID, EventType, EventDescription, Date) values ('".$uid."','".$et."','".$ed."' ,'".$date."')";
 if($conn->query($query))
-{   
-    header("location:event.php");
+{
+    echo  '<script>
+    window.location.href = "event.php"
+    </script>';
 }
 else{
     $message="Error: " . $query . "<br>" . $conn->error;

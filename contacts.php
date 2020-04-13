@@ -139,7 +139,6 @@ if(isset ($_POST['submit']))
         try
         {
             $mail=new PHPMailer(true);
-            $mail->IsSMTP(); 
             $mail->SMTPDebug = 2;
             $mail->SMTPAuth=true;
             $mail->SMTPSecure='ssl';
