@@ -92,8 +92,15 @@ else{
             ?>
             
         </div>
-        <div class='box'>        
-            <a class='button' id="iddButton" href='#popup2'>Add</a>
+        <div class='box'>
+            <script>
+                function openpop() {
+                    window.location.href='#popup2';
+                }
+            </script>
+            <button class='button' id="iddButton" href='#popup2' onclick="openpop()">
+                Add
+            </button>
         </div>
     </div>
 
@@ -117,8 +124,8 @@ else{
           <p>Date:</p>
           <input type="Date" id="indate"  name="indate" required> 
 
-          <button type="submit" class="btn" >Add</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button> 
+          <button class='button' type="submit" class="btn" >Add</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
 
         </form>
         </div>
