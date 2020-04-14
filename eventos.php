@@ -38,14 +38,14 @@
         include "query.php";
 
         if($result = queryEvents()){
-
-            $rowcount=mysqli_num_rows($result);
-            if($rowcount >0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo '    <div class="titleLogo">
+            echo '    <div class="titleLogo">
          <h1>Here are all the events</h1>
           <h1>please check them!</h1>
                 </div>';
+            $rowcount=mysqli_num_rows($result);
+            if($rowcount >0) {
+                while ($row = $result->fetch_assoc()) {
+
 
                     echo '  <div id="row">
         <div style="vertical-align: top">
