@@ -107,8 +107,15 @@ if(empty($_SESSION["name"])){?>
                 }
             ?>
         </div>
-        <div class='box'>        
-            <a class='button' id="iddButton" href='#popup2'>Add</a>
+        <div class='box'>
+            <script>
+                function openpop() {
+                    window.location.href='#popup2';
+                }
+            </script>
+            <button class='button' id="iddButton" href='#popup2' onclick="openpop()">
+                Add
+            </button>
         </div>
     </div>
 

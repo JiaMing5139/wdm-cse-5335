@@ -29,8 +29,10 @@ function Editbutton(){
     {
         $sql=$conn->prepare("Update video SET VideoType=?, Description=?, VideoUrl=? ,Date=? where VideoID=? and UserID=?");
         $sql->bind_param('ssssii',$_POST['videotype'],$_POST['videodescription'],$_POST['videourl'],$_POST["date"],$_POST['videoid'],$_SESSION["id"]);
-        if($sql->execute()){   
-            header("location:video.php");
+        if($sql->execute()){
+            echo  '<script>
+    window.location.href = "video.php"
+    </script>';
         }else{
             $message="Error: " . $sql . "<br>" . $conn->error;
             echo "<script type='text/javascript'>alert('$message');</script>";  
@@ -43,7 +45,9 @@ function Editbutton(){
             $sql=$conn->prepare("Update video SET VideoType=?, Description=?, VideoUrl=? ,Date=? where VideoID=? and UserID=?");
             $sql->bind_param('ssssii',$_POST['videotype'],$_POST['videodescription'],$_POST['videourl'],$_POST["date"],$_POST['videoid'],$_SESSION["id"]);
             if($sql->execute()){
-                header("location:video.php");
+                echo  '<script>
+    window.location.href = "video.php"
+    </script>';
             }else{
                 $message="Error: " . $sql . "<br>" . $conn->error;
                 echo "<script type='text/javascript'>alert('$message');</script>";
@@ -63,7 +67,9 @@ function Deletebtn(){
     $sql="Delete from video where VideoID=".$_POST["videoid"];
     echo $sql;
     $conn->query($sql);
-    header("location:video.php");
+    echo  '<script>
+    window.location.href = "video.php"
+    </script>';
 }
 
 ?>

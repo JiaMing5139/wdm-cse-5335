@@ -3,7 +3,6 @@
 require_once('phpmailer/PHPMailerAutoload.php');
 try{
 	  $mail=new PHPMailer(true);
-	  $mail->IsSMTP(); 
 	  $mail->SMTPAuth=true;
 	  $mail->SMTPSecure='ssl';
 	  $mail->Host='smtp.gmail.com';

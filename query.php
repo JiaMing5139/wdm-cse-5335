@@ -32,7 +32,9 @@ function getConn(){
 
 }
 function queryProject(){
-    $conn =  getConn();
+    if(!$conn =  getConn()){
+        return fasle;
+    }
     $sql = "Select * from project  ";
     if($result = mysqli_query($conn,$sql)) {
         mysqli_close($conn);
@@ -44,7 +46,9 @@ function queryProject(){
 }
 
 function queryEvents(){
-    $conn =  getConn();
+    if(!$conn =  getConn()){
+        return fasle;
+    }
     $sql = "Select * from events  ";
     if($result = mysqli_query($conn,$sql)) {
         mysqli_close($conn);
@@ -56,7 +60,9 @@ function queryEvents(){
 }
 
 function queryVideos(){
-    $conn =  getConn();
+    if(!$conn =  getConn()){
+        return fasle;
+    }
     $sql = "Select * from video  ";
     if($result = mysqli_query($conn,$sql)) {
         mysqli_close($conn);

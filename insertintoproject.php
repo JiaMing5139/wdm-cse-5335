@@ -18,8 +18,10 @@ if ($target_file=='proyect_1/')
 {
     $query="Insert into `project` (UserID, ProjectName, ProjectDescription, imgUrl, Date) values ('".$uid."','".$pn."','".$pd."','','".$date."')";
     if($conn->query($query))
-    {   
-        header("location:project.php");
+    {
+        echo  '<script>
+    window.location.href = "project.php"
+    </script>';
     }
     else{
         $message="Error: " . $query . "<br>" . $conn->error;
@@ -33,12 +35,16 @@ if ($target_file=='proyect_1/')
 }
 else
 {
+    echo $target_file;
     if(move_uploaded_file($_FILES["imgfile"]["tmp_name"], $target_file))
     {
         $query="Insert into `project` ( UserID, ProjectName, ProjectDescription, imgUrl, Date) values ('".$uid."','".$pn."','".$pd."','".$target_file."','".$date."')";
         if($conn->query($query))
-        {   
-            header("location:project.php");
+        {
+          echo  '<script>
+    window.location.href = "project.php"
+    </script>';
+
         }
         else{
             $message="Error: " . $query . "<br>" . $conn->error;
@@ -49,6 +55,9 @@ else
         </script> 
         <?php 
         }
+    }
+    else{
+        echo "upload failed";
     }
 }    
 

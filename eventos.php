@@ -37,24 +37,27 @@
     <?php
         ob_start();
         include "query.php";
+
         if($result = queryEvents()){
             echo '    <div class="titleLogo">
          <h1>Here are all the events</h1>
           <h1>please check them!</h1>
                 </div>';
+            $rowcount=mysqli_num_rows($result);
+            if($rowcount >0) {
+                while ($row = $result->fetch_assoc()) {
 
-                 while ($row = $result->fetch_assoc()) {
 
-                      echo '  <div id="row">
+                    echo '  <div id="row">
         <div style="vertical-align: top">
             <p> Event Type:<br>
-                '.$row["EventType"].'
+                ' . $row["EventType"] . '
             </p>
              <p> Description:<br>
-                '.$row["EventDescription"].'
+                ' . $row["EventDescription"] . '
             </p>
                <p> Date:<br>
-                '.$row["Date"].'
+                ' . $row["Date"] . '
             </p>
       
         </div>
@@ -62,9 +65,19 @@
     </div>
     </div>';
 
-                 }
+                }
+            }else{
+               echo '    <div class="titleLogo">
+         <h1>There are no events! try to upload new events!</h1>
+                </div>';
+
+            }
 
         }else {
+
+            echo '    <div class="titleLogo">
+         <h1>Query data failed ,please try again! or contact admin</h1>
+                </div>';
 
         }
     ?>

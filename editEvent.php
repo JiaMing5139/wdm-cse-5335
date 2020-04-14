@@ -57,7 +57,9 @@ function Deletebutton(){
     $sql='Delete from events where EventID='.$_POST['eventid'];
     //echo $sql;
     if($conn->query($sql)){
-        header("location:event.php");
+        '<script>
+    window.location.href = "event.php"
+    </script>';
     }
     else{
         $message="Error: " . $sql . "<br>" . $conn->error;

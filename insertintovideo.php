@@ -19,8 +19,10 @@ if ($target_file=='proyect_1/')
 {
     $query="Insert into `video` (UserID, VideoType, Description, VideoUrl, Date) values ('".$_SESSION["id"]."','".$vt."','".$vd."','','".$date."')";
     if($conn->query($query))
-    {   
-        header("location:video.php");
+    {
+        echo  '<script>
+    window.location.href = "video.php"
+    </script>';
     }
     else{
         $message="Error: " . $query . "<br>" . $conn->error;
@@ -37,8 +39,10 @@ else{
     {
         $query="Insert into `video` (UserID, VideoType, Description, VideoUrl, Date) values ('".$_SESSION["id"]."','".$vt."','".$vd."','".$target_dir."','".$date."')";
         if($conn->query($query))
-        {   
-                header("location:video.php");
+        {
+            echo  '<script>
+    window.location.href = "video.php"
+    </script>';
         }else{
                 $message="Error: " . $query . "<br>" . $conn->error;
                 echo "<script type='text/javascript'>alert('$message');</script>";  

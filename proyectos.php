@@ -65,14 +65,15 @@ session_start();
     echo '<div id="row1">
     <img style="width: 500px ; height: 400px" src="'.$row["imgUrl"] .'" alt="" />
     <div style="vertical-align: top">
-        <h3>'. $row["ProjectName"] .'</h3>
+        <h3>'. $row["ProjectName"] .'
+        <p>description:<p>
         <p>'. $row["ProjectDescription"] .'
         </p>
     </div>
 </div>';
      }
    }else{
-       echo $conn->error;
+   echo '    <h3 class="Heading">Query data failed ,please try again! or contact admin</h3>';
    }
   ?>
 <!--<div id="row2">-->
