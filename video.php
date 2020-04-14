@@ -15,6 +15,7 @@ session_start();
 
 <?php 
 include 'dbConn.php';
+ob_start();
 if(empty($_SESSION["name"])){?>
     <script>
         alert("Please login first!!!");
@@ -58,6 +59,18 @@ else{
         <a href="event.php" id="event" >Event</a>
         <a href="contacts.php" id="contact" >Contact</a>
         <a href="video.php" id="video" >Videos</a>
+        <?php 
+        $uid=$_SESSION['id'];
+        $query="Select Role from user where UserID='".$uid."'";
+        $r=$conn->query($query);
+        while($row = $r->fetch_assoc()) {
+            if($row["Role"]=='Admin'){
+                echo '<a href="messages.php" id="message" >Messages</a>';
+            }
+        }
+    ?>
+    
+    
     </div>
 
     <div class="table_container">

@@ -4,6 +4,7 @@
 <html>
 <body>
 <?php 
+ob_start();
 include 'dbConn.php';
 $target_dir="proyect_1/";
 $target_file=$target_dir.basename($_FILES["imgfile"]["name"]);
@@ -25,7 +26,7 @@ if ($target_file=='proyect_1/')
         echo "<script type='text/javascript'>alert('$message');</script>";  
     ?>
     <script>
-        setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 500);
+        setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 5);
     </script> 
     <?php 
     }
@@ -44,7 +45,7 @@ else
             echo "<script type='text/javascript'>alert('$message');</script>";  
         ?>
         <script>
-            setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 500);
+            setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 5);
         </script> 
         <?php 
         }

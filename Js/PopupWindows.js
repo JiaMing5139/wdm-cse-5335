@@ -2,8 +2,8 @@
 
 function validate(){
     var username = document.forms["form1"]["username"];               
-    var password = document.forms["form1"]["pass"];  
-                    
+    var password = document.forms["form1"]["password"]; 
+                
     if (username.value == "" || password.value == "" )
     {
         if (username.value == "")                                  
@@ -15,8 +15,21 @@ function validate(){
         { 
             window.alert("Javascript Validation: Please enter your password."); 
         } 
+        
+    
     }    
-    return true;
+    alert("OK");
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(username.value.match(mailformat))
+    {
+        return true;
+    }
+    else
+    {
+        window.alert("You have entered an invalid email address!");
+        return false;
+    }
+
 }
 
   function  openResponsive () {
@@ -56,7 +69,7 @@ function openLoginPopupWindow() {
             "    <h2>CENTRO AUGUSTO MIJARES </h2>\n" +
             "    <h3>Iniciar Sesion</S></h3>\n" +
             "    <div>\n" +
-            "        <input type=\"text\" id=\"user\"  name=\"username\" placeholder=\"Nombre de Usuario o Correo\" required>\n" +
+            "        <input type=\"email\" id=\"user\"  name=\"username\" placeholder=\"Nombre de Usuario o Correo\" required>\n" +
             "        <input type=\"password\" id=\"password\" name=\"password\" placeholder=\"Contrasena\" required>\n" +
             "        <div>\n" +
             "            <button class=\"submitbutton\" type=\"submit\" onclick=\"validate()\" value=\"ENTRAR\" id=\"submit\">ENTRAR</button>\n" +
@@ -166,7 +179,7 @@ var check = function() {
 function passwordRule(pasw){
     console.assert(typeof pasw !== "string");
  //   var rule = '^(?=.*[\\w])(?=.*[\\W])[\\w\\W]{8,}$'
-     return  pasw.length > 8 &&  pasw.length < 10;
+     return  pasw.length >= 8 &&  pasw.length <= 10;
 
 }
 

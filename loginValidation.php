@@ -37,7 +37,7 @@ if ($result=mysqli_query($conn,$sql))
 <script>    
     alert("PHP Validation: Invalid Email/Password....");
     <?php echo  $_SERVER["HTTP_REFERER"] ?>;
-    setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 500);  
+    setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 5);  
     //header("location:".$_SERVER["HTTP_REFERER"]);
 </script>
 

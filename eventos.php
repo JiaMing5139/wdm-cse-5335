@@ -35,6 +35,7 @@
 <div id="wrapper" class="eventos">
 <div>
     <?php
+        ob_start();
         include "query.php";
         if($result = queryEvents()){
             echo '    <div class="titleLogo">

@@ -1,19 +1,34 @@
 <?php
-
+ob_start();
 function getConn(){
+    // $servername = "localhost";
+    // $username = "root";
+    // $password = "";
+    // $db="csewdm";
+    // try {
+    //     $conn = new mysqli($servername,$username, $password,$db);
+    //     return $conn;
+    // }
+    // catch(PDOException $e)
+    // {
+    //     echo "Connection failed: " . $e->getMessage();
+    //     return false;
+    // }
+
     $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db="csewdm";
-    try {
-        $conn = new mysqli($servername,$username, $password,$db);
-        return $conn;
-    }
-    catch(PDOException $e)
-    {
-        echo "Connection failed: " . $e->getMessage();
-        return false;
-    }
+    $username = "axm9115_wp1";
+    $password = "KUDEbm;6W]Fa";
+    $db="axm9115_wp1";
+        try {
+            $conn = new mysqli($servername,$username, $password,$db);
+            return $conn;
+        }
+        catch(PDOException $e)
+        {
+            echo "Connection failed: " . $e->getMessage();
+            return false;
+        }
+
 
 }
 function queryProject(){

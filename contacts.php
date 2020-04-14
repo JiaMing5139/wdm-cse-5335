@@ -44,13 +44,23 @@ include 'dbConn.php';
         <a href="event.php" id="event" >Event</a>
         <a href="contacts.php" id="contact" >Contact</a>
         <a href="video.php" id="video" >Videos</a>
-    </div>
-
+        
     
+    <?php 
+        $uid=$_SESSION['id'];
+        $query="Select Role from user where UserID='".$uid."'";
+        $r=$conn->query($query);
+        while($row = $r->fetch_assoc()) {
+            if($row["Role"]=='Admin'){
+                echo '<a href="messages.php" id="message" >Messages</a>';
+            }
+        }
+    ?>
+    </div>
     <!-- ----------------HTML Validation-------------------------------------------------------------------->
     <div class="table_container">
         <h3 id="clickedName" style="margin-left:350px;" >Contact Us</h3>
-        <form action="contacts.php" method="post" class="form-container"> 
+        <form action="contacts.php" name="form" method="post" class="form-container"> 
         <div>
             <div style="margin-bottom:20px;">
                 <input type="text" id='name' name='name' style="height:25px; width:450px; margin-left:200px;" value='<?php echo $_SESSION["name"] ?>' required>
@@ -82,7 +92,7 @@ echo '<script>
                         window.alert("Javascript Validation: Email is required.");
                     } 
                                 
-                    if((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) == false))  
+                    else if((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) == false))  
                     {
                         window.alert("Javascript Validation: E-mail address is not in valid formet.");
                     }
@@ -135,29 +145,21 @@ if(isset ($_POST['submit']))
     }
     else
     {
-        require_once('phpmailer/PHPMailerAutoload.php');
-        try
-        {
-            $mail=new PHPMailer(true);
-            $mail->IsSMTP(); 
-            $mail->SMTPDebug = 2;
-            $mail->SMTPAuth=true;
-            $mail->SMTPSecure='ssl';
-            $mail->Host='smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Port=465;
-            $mail->isHTML();
-            $mail->Username='centro.mijares@gmail.com';
-            $mail->Password='abcd1234@';
-            $mail->Subject=$subject;
-            $mail->SetFrom("ashutoshmehta65@gmail.com", $name);
-            $mail->Body=$msg;
-            $mail->AddAddress('centro.mijares@gmail.com');
-            $mail->send();
+
+        $query="Insert into `messages` (EmailID, Message, Status) values ('".$email."','".$msg."','1')";
+        if($conn->query($query)){ ?>
+            <script>
+                alert("Message send successfully!!");
+            </script>
+
+        <?php    
         }
-        catch(Exception $e){
-            echo $e->getMessage();
-        }    
+        else
+        {
+            $message="Error: " . $query . "<br>" . $conn->error;
+            echo "<script type='text/javascript'>alert('$message');</script>"; 
+        }
+
     }
 }
 ?>

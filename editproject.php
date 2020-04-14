@@ -1,7 +1,7 @@
 <html>
 <body>
 <?php 
-
+ob_start();
 if(isset($_POST['editbtn'])){
     Editbutton();
 }

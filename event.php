@@ -15,6 +15,7 @@ session_start();
 
 <?php 
 include 'dbConn.php';
+ob_start();
 if(empty($_SESSION["name"])){?>
     <script>
         alert("Please login first!!!");
@@ -60,6 +61,17 @@ else{
         <a href="event.php" id="event" >Event</a>
         <a href="contacts.php" id="contact" >Contact</a>
         <a href="video.php" id="video" >Videos</a>
+
+        <?php 
+        $uid=$_SESSION['id'];
+        $query="Select Role from user where UserID='".$uid."'";
+        $r=$conn->query($query);
+        while($row = $r->fetch_assoc()) {
+            if($row["Role"]=='Admin'){
+                echo '<a href="messages.php" id="message" >Messages</a>';
+            }
+        }
+    ?>    
     </div>
 
     <div class="table_container">
@@ -70,6 +82,7 @@ else{
                 <!-- <p ><b>User ID</p> -->
                 <p><b>Event Type</p>
                 <p><b>Event Description</p>
+                <p style='padding-left: 30px;'><b>Event Image URL</p>
                 <p><b>Date</p><p><b>Edit</p>
             </div>
             
@@ -82,6 +95,7 @@ else{
                     // echo "<p id='ui".$row["EventID"]."' hidden>" .$row["UserID"]. "</p>";
                     echo "<p id='et".$row["EventID"]."'>" .$row["EventType"]. "</p>";
                     echo "<p id='ed".$row["EventID"]."'>" .$row["EventDescription"]. "</p>";
+                    echo "<img id='eventurl".$row["EventID"]."' src='".$row["EventUrl"]."'>" ;
                     echo "<p id='date".$row["EventID"]."'>" .$row["Date"]. "</p>";
                     echo "<div class='box'>";
                     echo "<a  class='button' href='#popup1' onclick='btnEdit(".$row['EventID'].")'> Edit </a>";
@@ -100,10 +114,7 @@ else{
     <div id="popup2" class="overlay">
 	<div class="edit-popup">
     <a class="close" href="#">&times;</a>
-    <form action="insertintoevent.php" method="post" enctype="multipart/form-data" class="form-container">
-          <p>Event ID:</p> 
-          <input type="text" id="inid" name="ineventid"  required readonly> 
-          
+    <form action="insertintoevent.php" method="post" enctype="multipart/form-data" class="form-container"> 
           <!-- <p>User ID:</p>
           <input type="text" id="inuserid" name="inuserid" required> -->
 
@@ -113,6 +124,9 @@ else{
 
           <p>Event Description:</p>
           <textarea id="ineventdescription" name="ineventdescription" rows="5" width="50%"></textarea>      
+
+          <p> Want to insert image?<p>
+          <input type="file" id="ineventimgfile" name="ineventimgfile" >      
 
           <p>Date:</p>
           <input type="Date" id="indate"  name="indate" required> 
@@ -139,6 +153,12 @@ else{
 
           <p>Event Description:</p>
           <textarea id="eventdescription" name="eventdescription" rows="5" width="50%"></textarea>
+        
+          <p>Image:</p>
+          <img id="eventimage" name="eventimage" width="150px"  >
+          
+          <p> Want to change image?<p>
+          <input type="file" id="eventimgfile" name="eventimgfile" > 
         
           <p>Date:</p>
           <input type="Date" id="date"  name="date" required>
@@ -179,11 +199,13 @@ else{
         et=document.getElementById("et"+x).innerHTML;
         ed=document.getElementById("ed"+x).innerHTML;
         date=document.getElementById("date"+x).innerHTML;
+        eventurl=document.getElementById("eventurl"+x).innerHTML;
         document.getElementById('eid').value=x;
         //document.getElementById('userid').value=ui;
         document.getElementById('eventtype').value=et;
         document.getElementById('eventdescription').value=ed;
         document.getElementById('date').value=date;
+        document.getElementById('eventimage').value=eventurl;
     }
 
       

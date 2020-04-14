@@ -26,30 +26,32 @@ $rowcount=mysqli_num_rows($result);
     if(mysqli_query($conn,$sql)){
       $sub="Registration Message";
       $message="Thank you for registering!! To add/modify project, events and video, please login!!";
+      
+  // require_once('phpmailer/PHPMailerAutoload.php');
+  // try{
+  //   $mail=new PHPMailer(true);
+  //   $mail->IsSMTP(); 
+  //   $mail->SMTPDebug = 2;
+  //   $mail->SMTPAuth=true;
+  //   $mail->SMTPSecure='ssl';
+  //   $mail->Host='smtp.gmail.com';
+  //   $mail->SMTPAuth = true;
+  //   $mail->Port=465;
+  //   $mail->isHTML();
+  //   $mail->Username='centro.mijares@gmail.com';
+  //   $mail->Password='abcd1234@';
+  //   $mail->Subject=$sub;
+  //   $mail->SetFrom("centro.mijares@gmail.com");
+  //   $mail->Body=$message;
+  //   $mail->AddAddress($email);
+  //   $mail->send();
     
-  require_once('phpmailer/PHPMailerAutoload.php');
-  try{
-    $mail=new PHPMailer(true);
-    $mail->IsSMTP(); 
-    $mail->SMTPDebug = 2;
-    $mail->SMTPAuth=true;
-    $mail->SMTPSecure='ssl';
-    $mail->Host='smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Port=465;
-    $mail->isHTML();
-    $mail->Username='centro.mijares@gmail.com';
-    $mail->Password='abcd1234@';
-    $mail->Subject=$sub;
-    $mail->SetFrom("centro.mijares@gmail.com");
-    $mail->Body=$message;
-    $mail->AddAddress($email);
-    $mail->send();
+  // }
+  // catch(Exception $e){
+  //   echo $e->getMessage();
+  //   }
+    mail($email,$sub,$message);
     
-  }
-  catch(Exception $e){
-    echo $e->getMessage();
-    }
     ?>
     <script>
         alert("User successfully registerd!!!");
