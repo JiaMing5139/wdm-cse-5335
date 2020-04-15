@@ -2,7 +2,7 @@
 
 //echo $_POST['username'].$_POST['password'];
 
-include 'dbConn.php';
+
 ob_start();
 session_start();
 $fn=$_POST['Fname'];
@@ -40,7 +40,7 @@ if(empty($fn) or empty($_POST['Email']) or (!filter_var($_POST['Email'], FILTER_
 }
 
 
-
+include 'dbConn.php';
 
 $sql="Insert into `user` (Name, Email, Password, Address) values ('".$fn."','".$email."','".$pd."','".$address."')";
 $sql1="Select * from user where Email='".$email."'";
