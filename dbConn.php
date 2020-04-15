@@ -13,10 +13,10 @@
 ?>
 
 <?php
-$servername = "localhost";
-$username = "axm9115_wp1";
-$password = "KUDEbm;6W]Fa";
-$db="axm9115_wp1";
+$servername = "35.202.91.224";
+$username = "root";
+$password = "ashujimmy123";
+$db="csewdm";
 try {
     $conn = new mysqli($servername,$username, $password,$db);
     }

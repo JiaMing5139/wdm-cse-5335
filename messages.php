@@ -9,6 +9,8 @@ session_start();
     <link rel="stylesheet" type="text/css" href="style/mijares.css">
     <script type="text/javascript" src="Js/User.js"></script>
     <script type="text/javascript" src="Js/PopupWindows.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -30,6 +32,9 @@ ob_start();
         <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
         <a onclick="openRegisterWindow()">Registru</a>
         <a href="User.html" id="userTag" style="color: #454cde">User</a>
+    <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
+        <i class="fa fa-bars"></i>
+    </a>
     </div>
 <div id="wrapper" class="User">
     <div class="titleRow">

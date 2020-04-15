@@ -48,7 +48,6 @@ if ($result=mysqli_query($conn,$sql))
     $_SESSION["id"]=$row[0];
     $_SESSION["name"]=$row[1];
     echo '<script>
-
     sessionStorage.setItem("name",0)
     console.log(sessionStorage)
     window.location.href = "project.php"
