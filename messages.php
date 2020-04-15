@@ -30,6 +30,9 @@ ob_start();
         <a onclick="openLoginPopupWindow()">Iniete De Sesiem</a>
         <a onclick="openRegisterWindow()">Registru</a>
         <a href="User.html" id="userTag" style="color: #454cde">User</a>
+    <a href="javascript:void(0);" class="icon" onclick="openResponsive()">
+        <i class="fa fa-bars"></i>
+    </a>
     </div>
 <div id="wrapper" class="User">
     <div class="titleRow">

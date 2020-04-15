@@ -1,24 +1,11 @@
 <?php
 ob_start();
 function getConn(){
-    // $servername = "localhost";
-    // $username = "root";
-    // $password = "";
-    // $db="csewdm";
-    // try {
-    //     $conn = new mysqli($servername,$username, $password,$db);
-    //     return $conn;
-    // }
-    // catch(PDOException $e)
-    // {
-    //     echo "Connection failed: " . $e->getMessage();
-    //     return false;
-    // }
 
-    $servername = "localhost";
-    $username = "axm9115_wp1";
-    $password = "KUDEbm;6W]Fa";
-    $db="axm9115_wp1";
+    $servername = "35.202.91.224";
+    $username = "root";
+    $password = "ashujimmy123";
+    $db="csewdm";
         try {
             $conn = new mysqli($servername,$username, $password,$db);
             return $conn;
@@ -51,6 +38,7 @@ function queryEvents(){
     }
     $sql = "Select * from events  ";
     if($result = mysqli_query($conn,$sql)) {
+        mysqli_commit($conn);
         mysqli_close($conn);
         return $result;
     }else{
