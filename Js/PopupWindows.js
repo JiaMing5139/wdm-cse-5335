@@ -18,13 +18,12 @@ function validate(){
         
     
     }    
-    alert("OK");
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(username.value.match(mailformat))
     {
         return true;
     }
-    else
+    else if((!username.value.match(mailformat)) && username.value!="")
     {
         window.alert("You have entered an invalid email address!");
         return false;

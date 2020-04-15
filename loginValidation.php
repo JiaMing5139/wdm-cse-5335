@@ -6,7 +6,34 @@ session_start();
 
 <?php 
 
-//echo $_POST['username'].$_POST['password'];
+if(empty($_POST['username']) or empty($_POST['password']) or (!filter_var($_POST['username'], FILTER_VALIDATE_EMAIL) )){
+  if(empty($_POST['username'])){ ?>
+        <script>
+                alert("PHP Validation:You didnt enter username.. Please fill username and password");
+                setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 5);
+        </script>    
+  <?php
+}    
+
+  if(empty($_POST['password'])){ ?>
+    <script>
+      alert("PHP Validation:You didnt enter password.. Please fill username and password");
+      setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 5);
+    </script> 
+  <?php
+  }
+
+  if (!filter_var($_POST['username'], FILTER_VALIDATE_EMAIL))
+  { ?>
+    <script>
+      alert("PHP Validation:You entered wrong format for username..");
+      setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 5);
+    </script>
+  <?php
+  }
+}
+
+
 
 include 'dbConn.php';
 $sql="Select UserID, Name from user where Email='".$_POST['username']."' and Password='".$_POST['password']."'";
@@ -37,7 +64,7 @@ if ($result=mysqli_query($conn,$sql))
 <script>    
     alert("PHP Validation: Invalid Email/Password....");
     <?php echo  $_SERVER["HTTP_REFERER"] ?>;
-    setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 5);  
+    setTimeout(function(){window.location ='<?php echo $_SERVER["HTTP_REFERER"] ?>';}, 100);  
     //header("location:".$_SERVER["HTTP_REFERER"]);
 </script>
 

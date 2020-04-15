@@ -15,6 +15,15 @@ session_start();
 
 <?php 
 include 'dbConn.php';
+if(isset($_SESSION['msg']))
+{
+    if($_SESSION['msg']!="")
+    {
+        echo "<script>alert('".$_SESSION['msg']."')</script>";
+        echo "<noscript>".$_SESSION['msg']."</noscript>";
+        $_SESSION['msg']="";
+    }
+}
 ?>
     <div class="nav-container">
         <img src="image/logo.png">
