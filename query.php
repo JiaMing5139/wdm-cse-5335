@@ -38,7 +38,6 @@ function queryEvents(){
     }
     $sql = "Select * from events  ";
     if($result = mysqli_query($conn,$sql)) {
-        mysqli_commit($conn);
         mysqli_close($conn);
         return $result;
     }else{
