@@ -17,7 +17,7 @@ if(isset($_POST['deletebtn'])){
 
 function Editbutton(){
     include 'dbConn.php';
-    $target_dir="proyect_1/";
+    $target_dir="video/";
     $target_file=$target_dir.basename($_FILES["videofile"]["name"]);
     echo $target_file; 
     $vid=$_POST['videoid'];
@@ -25,7 +25,7 @@ function Editbutton(){
     $vd=$_POST['videodescription']; 
     $date=$_POST['date'];
     $vu=$_POST['videourl'];
-    if ($target_file=='proyect_1/')
+    if ($target_file=='video/')
     {
         $sql=$conn->prepare("Update video SET VideoType=?, Description=?, VideoUrl=? ,Date=? where VideoID=? and UserID=?");
         $sql->bind_param('ssssii',$_POST['videotype'],$_POST['videodescription'],$_POST['videourl'],$_POST["date"],$_POST['videoid'],$_SESSION["id"]);
@@ -40,7 +40,7 @@ function Editbutton(){
     }
     else
     {
-        if(move_uploaded_file($_FILES["imgfile"]["tmp_name"], $target_file))
+        if(move_uploaded_file($_FILES["videofile"]["tmp_name"], $target_file))
         {
             $sql=$conn->prepare("Update video SET VideoType=?, Description=?, VideoUrl=? ,Date=? where VideoID=? and UserID=?");
             $sql->bind_param('ssssii',$_POST['videotype'],$_POST['videodescription'],$_POST['videourl'],$_POST["date"],$_POST['videoid'],$_SESSION["id"]);

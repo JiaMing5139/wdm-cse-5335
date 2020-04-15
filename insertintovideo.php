@@ -7,15 +7,16 @@ session_start();
 <?php 
 ob_start();
 include 'dbConn.php';
-$target_dir="proyect_1/";
-$target_file=$target_dir.basename($_FILES["videofile"]["name"]); 
-
+$target_dir="video/";
+$target_file=$target_dir.basename($_FILES["videofile"]["name"]);
+echo $_FILES["videofile"]["name"];
+echo $target_file;
 $vt= $_POST['invideotype'];
 $vd=$_POST['invideodescription']; 
 $date=$_POST['indate'];
 //$vu=$_POST['videofile'];
 
-if ($target_file=='proyect_1/')
+if ($target_file=='video/')
 {
     $query="Insert into `video` (UserID, VideoType, Description, VideoUrl, Date) values ('".$_SESSION["id"]."','".$vt."','".$vd."','','".$date."')";
     if($conn->query($query))
@@ -37,7 +38,7 @@ if ($target_file=='proyect_1/')
 else{
     if(move_uploaded_file($_FILES["videofile"]["tmp_name"], $target_file))
     {
-        $query="Insert into `video` (UserID, VideoType, Description, VideoUrl, Date) values ('".$_SESSION["id"]."','".$vt."','".$vd."','".$target_dir."','".$date."')";
+        $query="Insert into `video` (UserID, VideoType, Description, VideoUrl, Date) values ('".$_SESSION["id"]."','".$vt."','".$vd."','".$target_file."','".$date."')";
         if($conn->query($query))
         {
             echo  '<script>

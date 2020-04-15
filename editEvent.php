@@ -28,7 +28,9 @@ function Editbutton(){
         if ($target_file=='proyect_1/'){
             $query="Update `events` SET EventType='".$_POST["eventtype"]."',EventDescription=\"".$_POST["eventdescription"]."\",Date=\"".$_POST["date"]."\" where EventID=".$_POST["eventid"]." and UserID=".$_SESSION["id"];
             if($conn->query($query)){
-                //header("location:event.php");
+                echo  '<script>
+    window.location.href = "event.php"
+    </script>';
             }
             else{
                 $message="Error: " . $query . "<br>" . $conn->error;
@@ -40,7 +42,9 @@ function Editbutton(){
                 $query="Update `events` SET EventType='".$_POST["eventtype"]."',EventUrl='".$target_file."',EventDescription=\"".$_POST["eventdescription"]."\",Date=\"".$_POST["date"]."\" where EventID=".$_POST["eventid"]." and UserID=".$_SESSION["id"];
                 if($conn->query($query)){
                     echo $query;
-                    //header("location:event.php");
+                    echo  '<script>
+    window.location.href = "event.php"
+    </script>';
                 }
                 else{
                     $message="Error: " . $query . "<br>" . $conn->error;
@@ -57,7 +61,7 @@ function Deletebutton(){
     $sql='Delete from events where EventID='.$_POST['eventid'];
     //echo $sql;
     if($conn->query($sql)){
-        '<script>
+      echo  '<script>
     window.location.href = "event.php"
     </script>';
     }

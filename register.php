@@ -41,13 +41,14 @@ if(empty($fn) or empty($_POST['Email']) or (!filter_var($_POST['Email'], FILTER_
 
 
 
-
+include 'dbConn.php' ;
 $sql="Insert into `user` (Name, Email, Password, Address) values ('".$fn."','".$email."','".$pd."','".$address."')";
 $sql1="Select * from user where Email='".$email."'";
 echo $sql;
 $result=mysqli_query($conn,$sql1);
 
 $rowcount=mysqli_num_rows($result);
+echo '<br>'.$rowcount;
   if($rowcount>0){
     header("Location:".$_SERVER['HTTP_REFERER']);
     ?>
@@ -60,15 +61,21 @@ $rowcount=mysqli_num_rows($result);
   }
   else{
     if(mysqli_query($conn,$sql)){
-      $sub="Registration Message";
-      $message="Thank you for registering!! To add/modify project, events and video, please login!!";
+      $sub="Registration Message\n";
+      $message="Thank you for registering!! To add/modify project, events and video, please login!!\n";
       
-    mail($email,$sub,$message);
+    if(!mail($email,$sub,$message)){
+        $errorMessage = error_get_last()['message'];
+    }
+        echo "<br>start jump out";
+
     header("Location:".$_SERVER['HTTP_REFERER']);
     ?>
-     
     <?php
-    }  
+    }  else{
+        echo "<br>error";
+        echo $conn->error;
+    }
   }
 ?>
 

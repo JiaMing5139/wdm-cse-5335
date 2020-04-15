@@ -24,7 +24,9 @@ if ($target_file=='proyect_1/')
     if($conn->query($query))
     {   
         echo $query;
-        header("location:event.php");
+        echo  '<script>
+    window.location.href = "event.php"
+    </script>';
     }
     else{
         $message="Error: " . $query . "<br>" . $conn->error;
@@ -45,7 +47,9 @@ else
         if($conn->query($query))
         {   
             echo $query;
-            header("location:event.php");
+            echo  '<script>
+            window.location.href = "event.php"
+            </script>';
         }
         else{
             $message="Error: " . $query . "<br>" . $conn->error;
